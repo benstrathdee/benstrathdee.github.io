@@ -1,0 +1,33 @@
+@font-face {
+	font-family: "Roboto";
+	src: local("Robot"),
+		url(./fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+body {
+	margin: 0;
+	font-family: Roboto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100%;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+html {
+	background: url(./images/background.jpg) no-repeat center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	scroll-behavior: smooth;
+	font-size: 20px;
+	height: 100%;
+}
+
+#root {
+	height: 100%;
+}

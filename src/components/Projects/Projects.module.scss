@@ -1,0 +1,17 @@
+.Projects {
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	opacity: 1;
+	height: 100%;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&__Invis {
+		@extend .Projects;
+		transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		opacity: 0;
+	}
+}

@@ -1,0 +1,68 @@
+%templateCard {
+	color: whitesmoke;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 20px;
+	border: 2px solid gray;
+}
+
+.Skills {
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	opacity: 1;
+	height: 100%;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&__Invis {
+		@extend .Skills;
+		transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		opacity: 0;
+	}
+}
+.Card {
+	margin-top: 4vw;
+	width: 90vw;
+	height: 80%;
+	background-color: rgba(29, 21, 65, 0.3);
+	border-radius: 10px;
+	display: grid;
+	grid-template-areas: "title info" "list info";
+	grid-template-rows: 1fr 6fr;
+	grid-template-columns: 1fr 4fr;
+	&_Title {
+		@extend %templateCard;
+		grid-area: title;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& h3 {
+			margin: 0;
+			font-weight: lighter;
+		}
+	}
+	&_List {
+		@extend %templateCard;
+		grid-area: list;
+		margin-top: 0;
+		overflow-y: scroll;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+	&_Info {
+		@extend %templateCard;
+		grid-area: info;
+		margin-left: 0;
+		overflow-y: scroll;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+}
