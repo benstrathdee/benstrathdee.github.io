@@ -1,0 +1,58 @@
+.Modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(9, 7, 14, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&_Content {
+		pointer-events: auto;
+		padding: 20px;
+		background-color: rgba(0, 0, 0, 0.9);
+		color: whitesmoke;
+		border: 2px solid gray;
+		border-radius: 4px;
+		display: grid;
+		grid-template-areas: "image header" "image body";
+		width: 40vw;
+		@media only screen and (max-width: 800px) {
+			display: flex;
+			flex-direction: column;
+		}
+		align-items: center;
+		padding: 20px;
+	}
+	&_Header {
+		height: 100%;
+		grid-area: header;
+		display: flex;
+		justify-content: right;
+		align-items: flex-start;
+		& button {
+			color: white;
+			border: 0;
+			background-color: black;
+			font-weight: bold;
+		}
+	}
+	&_ThumbWrapper {
+		grid-area: image;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&_Thumb {
+		max-height: 300px;
+		border: 3px solid black;
+		border-radius: 10px;
+		box-shadow: 0px 10px 13px -7px black;
+	}
+	&_Body {
+		margin-left: 20px;
+		grid-area: body;
+	}
+	z-index: 2;
+}

@@ -1,3 +1,10 @@
+%templateCard {
+	color: whitesmoke;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 20px;
+	border: 2px solid gray;
+}
+
 .About {
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -14,4 +21,97 @@
 		-webkit-transition: all 0.5s;
 		opacity: 0;
 	}
+}
+.Card {
+	margin-top: 4vw;
+	width: 50vw;
+	height: 80%;
+	background-color: rgba(29, 21, 65, 0.3);
+	border-radius: 10px;
+	display: grid;
+	grid-template-areas: "title info" "list info";
+	grid-template-rows: 1fr 6fr;
+	grid-template-columns: 1fr 2fr;
+	&_Title {
+		@extend %templateCard;
+		grid-area: title;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& h3 {
+			margin: 0;
+			font-weight: lighter;
+		}
+	}
+	&_Info {
+		@extend %templateCard;
+		grid-area: info;
+		margin-left: 0;
+		overflow-y: scroll;
+		text-align: left;
+		padding: 10px;
+		padding-top: 0;
+		padding-left: 20px;
+		&::-webkit-scrollbar {
+			display: none;
+		}
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		& h3 {
+			text-align: center;
+			font-weight: lighter;
+		}
+	}
+}
+
+.LinksList {
+	@extend %templateCard;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	grid-area: list;
+	margin-top: 0;
+	overflow-y: scroll;
+	padding: 5px;
+	width: auto;
+	list-style: none;
+	padding-left: 0;
+	&_Item {
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		padding: 10px;
+		margin: 5px;
+		border-radius: 2px;
+		transition: all 0.3s;
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.2);
+			transition: all 0.3s;
+		}
+	}
+}
+
+.Link {
+	text-decoration: none;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	color: inherit;
+	&:visited {
+		color: inherit;
+	}
+	&:active {
+		color: inherit;
+	}
+}
+
+.HorizontalRule {
+	height: 1px;
+	background-color: gray;
+	border: none;
+	width: 100%;
 }

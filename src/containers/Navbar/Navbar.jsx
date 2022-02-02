@@ -5,11 +5,9 @@ import styles from "./Navbar.module.scss";
 const Navbar = () => {
 	return (
 		<div className={styles.Navbar}>
+			<NavbarItem name="Skills / Projects" />
 			<NavbarItem name="Home" />
-			<NavbarItem name="Skills" />
-			<NavbarItem name="Projects" />
-			<NavbarItem name="About" />
-			<NavbarItem name="Contact" />
+			<NavbarItem name="About / Contact" />
 		</div>
 	);
 };
