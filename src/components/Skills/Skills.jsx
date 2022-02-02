@@ -5,7 +5,7 @@ import styles from "./Skills.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SkillCard from "../SkillCard/SkillCard";
 import { skillsList } from "./../../content/SkillsContent/SkillsContent";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 
 const Skills = () => {
 	const { show, activeSkill, setActiveSkill, showSkill, setShowSkill } =

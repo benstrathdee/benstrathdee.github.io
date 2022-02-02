@@ -5,7 +5,7 @@ import Skills from "./../../components/Skills/Skills";
 import About from "./../../components/About/About";
 import { StateContext } from "../../context/StateContext/StateContext";
 import { wait } from "@testing-library/user-event/dist/utils";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 
 const DisplayWindow = () => {

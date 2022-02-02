@@ -1,4 +1,4 @@
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./Modal.module.scss";
 
