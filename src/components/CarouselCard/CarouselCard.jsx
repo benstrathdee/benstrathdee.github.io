@@ -3,12 +3,11 @@ import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./CarouselCard.module.scss";
 
 const CarouselCard = ({ project }) => {
-	const { showModal, setShowModal, setModalContent } =
-		useContext(StateContext);
+	const { setShowModal, setModalContent } = useContext(StateContext);
 
 	const handleModal = () => {
 		setModalContent(project);
-		setShowModal(!showModal);
+		setShowModal(true);
 	};
 
 	return (
@@ -16,7 +15,7 @@ const CarouselCard = ({ project }) => {
 			<div className={styles.ImageWrapper}>
 				<img
 					src={project.projectImage}
-					alt=""
+					alt="Relevant project"
 					className={styles.ImageWrapper_Image}
 				/>
 			</div>

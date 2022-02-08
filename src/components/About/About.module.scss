@@ -1,24 +1,15 @@
-%templateCard {
-	color: whitesmoke;
-	background-color: rgba(0, 0, 0, 0.5);
-	margin: 20px;
-	border: 2px solid gray;
-}
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
 
 .About {
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
+	@extend %centerFlex;
+	@extend %transitionSlow;
 	opacity: 1;
 	height: 100%;
 	width: 100vw;
-	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	&__Invis {
 		@extend .About;
-		transition: all 0.5s;
-		-webkit-transition: all 0.5s;
 		opacity: 0;
 	}
 }
@@ -26,18 +17,16 @@
 	margin-top: 4vw;
 	width: 50vw;
 	height: 80%;
-	background-color: rgba(29, 21, 65, 0.3);
+	background-color: $primary-bg-color;
 	border-radius: 10px;
 	display: grid;
 	grid-template-areas: "title info" "list info";
 	grid-template-rows: 1fr 6fr;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 1fr 4fr;
 	&_Title {
 		@extend %templateCard;
+		@extend %centerFlex;
 		grid-area: title;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		& h3 {
 			margin: 0;
 			font-weight: lighter;
@@ -87,10 +76,10 @@
 		padding: 10px;
 		margin: 5px;
 		border-radius: 2px;
-		transition: all 0.3s;
+		@extend %transitionFast;
 		&:hover {
-			background-color: rgba(255, 255, 255, 0.2);
-			transition: all 0.3s;
+			background-color: $primary-highlight-color;
+			@extend %transitionFast;
 		}
 	}
 }
@@ -110,8 +99,5 @@
 }
 
 .HorizontalRule {
-	height: 1px;
-	background-color: gray;
-	border: none;
-	width: 100%;
+	@extend %horizontalRule;
 }

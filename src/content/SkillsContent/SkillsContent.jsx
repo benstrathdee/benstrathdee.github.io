@@ -14,58 +14,80 @@ import {
 	faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { OldPortfolio, HTMLCalculator } from "./../../images";
+
 export const skillOne = {
 	title: "HTML / CSS / SASS",
-	content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis fringilla nunc sed risus feugiat, non cursus nunc sagittis. Donec vestibulum porta elit, non commodo felis scelerisque vel. Suspendisse in quam vel augue tincidunt suscipit pulvinar vitae lacus. Ut molestie, justo in egestas commodo, leo urna dapibus ante, vitae interdum libero massa dignissim ante. Nullam iaculis id neque non ultrices. Aenean id aliquam velit. Etiam laoreet orci ac quam sodales tincidunt at non mi. Proin sapien mauris, posuere ac efficitur eu, dapibus eu quam`,
+	number: 1,
+	content: [
+		`I still remember writing my first HTML and CSS in an attempt to make my own custom tumblr theme way back in 2010. Thankfully I can say my skills have come a long way since then!`,
+		`These days, I'm proficient with HTML, CSS, and SASS (SCSS), but largely choose to work with ReactJS. I've made some simple websites (such as my old portfolio made near the start of the coding boot camp), and especially enjoy attempting to recreate existing sites/things from static images as I find it a great problem solving task.`,
+		`When I'm working on personal projects or things of a less serious nature, I always try to leave some sort of gimmick or personal touch.`,
+	],
 	projects: [
 		{
-			name: "project1",
-			description: "12/12/12",
-			projectImage: "https://www.placecage.com/200/200",
-			link: "",
+			name: "Old Portfolio",
+			description:
+				"Made during the earlier days of the _nology boot camp as a test of my skills at the time. It might not be a depiction of my current abilities, but it serves as a good display of how far I've come!",
+			projectImage: OldPortfolio,
+			link: "https://github.com/benstrathdee/old-portfolio",
+		},
+		{
+			name: "Calculator",
+			description:
+				"The _nology boot camp tasked me with recreating an image of a calculator in HTML/CSS and giving it functionality with JS. The calculator I chose can be found in the project files on GitHub! I always enjoy getting to recreate an existing product like this.",
+			projectImage: HTMLCalculator,
+			link: "https://github.com/benstrathdee/calculator-project",
 		},
 	],
 	icons: [faHtml5, faCss3, faSass],
 };
 export const skillTwo = {
 	title: "JavaScript / ReactJS",
-	content: "blah blah blah",
+	number: 2,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faJsSquare, faReact],
 };
 export const skillThree = {
 	title: "Java",
-	content: "blah blah blah",
+	number: 3,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faJava],
 };
 export const skillFour = {
 	title: "Git (Git Bash)",
-	content: "blah blah blah",
+	number: 4,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faGit],
 };
 export const skillFive = {
 	title: "TDD (Jest / JUnit)",
-	content: "blah blah blah",
+	number: 5,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faFileSignature],
 };
 export const skillSix = {
 	title: "SQL (MySQL)",
-	content: "blah blah blah",
+	number: 6,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faDatabase],
 };
 export const skillSeven = {
 	title: "Google Firestore",
-	content: "blah blah blah",
+	number: 7,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faFireAlt],
 };
 export const skillEight = {
 	title: "Misc.",
-	content: "blah blah blah",
+	number: 8,
+	content: ["blah blah blah"],
 	projects: [],
 	icons: [faQuestion],
 };

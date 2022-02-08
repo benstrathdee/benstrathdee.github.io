@@ -1,29 +1,26 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
 .Home {
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
+	@extend %centerFlex;
+	@extend %transitionFast;
+	color: $primary-font-color;
 	opacity: 1;
 	height: 100%;
 	width: 100vw;
-	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	&_Title {
-		color: whitesmoke;
 		font-size: 9vh;
 		margin: 0;
-		text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.2), 0px 3px 10px #7a8287;
+		text-shadow: 3px 2px 3px $primary-highlight-color,
+			0px 3px 10px $primary-border-color;
 	}
 	&_Subtitle {
-		color: whitesmoke;
+		@extend .Home_Title;
 		font-size: 7vh;
-		margin: 0;
-		text-shadow: 3px 2px 3px rgba(255, 255, 255, 0.2), 0px 3px 10px #7a8287;
 	}
 	&__Invis {
 		@extend .Home;
-		transition: all 0.5s;
-		-webkit-transition: all 0.5s;
 		opacity: 0;
 	}
 }

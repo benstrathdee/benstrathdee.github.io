@@ -1,16 +1,18 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
 .NavbarItem {
-	transition: 500ms;
+	color: $primary-font-color;
+	@extend %transitionSlow;
 	border-bottom: 2px solid transparent;
 	cursor: pointer;
 	&:hover {
-		text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-		border-color: whitesmoke;
 		cursor: pointer;
+		text-shadow: 0px 5px 5px $secondary-bg-color;
+		border-color: $primary-font-color;
 	}
 	&__Current {
-		color: whitesmoke;
-		text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
-		border-bottom: 2px solid whitesmoke;
-		cursor: pointer;
+		@extend .NavbarItem:hover;
+		border-bottom: 2px solid;
 	}
 }

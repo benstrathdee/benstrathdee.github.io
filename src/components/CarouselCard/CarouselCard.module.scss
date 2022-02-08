@@ -1,40 +1,39 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
 .CarouselCard {
+	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-items: center;
-	height: 9vw;
+	height: $carouselcard-height;
+	width: $carouselcard-width;
 	position: relative;
 }
 .ImageWrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	&_Link {
-		text-decoration: none;
-		height: 9vw;
-	}
 	&_Image {
-		position: relative;
-		top: 0;
-		height: 9vw;
-		width: auto;
+		object-fit: cover;
+		height: $carouselcard-height;
+		width: $carouselcard-width;
 	}
 }
 .InfoWrapper {
+	@extend %transitionFast;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	z-index: 1;
-	width: 9vw;
-	height: 9vw;
+	height: $carouselcard-height;
+	width: $carouselcard-width;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-	color: rgba(0, 0, 0, 0);
 	opacity: 0;
-	background: black;
-	transition: all 0.3s ease;
+	color: $primary-font-color;
 	background: linear-gradient(
 		0deg,
 		black 0%,
@@ -42,12 +41,10 @@
 		rgba(255, 255, 255, 0) 30%
 	);
 	&:hover {
-		color: white;
+		@extend %transitionFast;
 		opacity: 1;
-		transition: all 0.3s ease;
 	}
 	&_Content {
 		margin: 10px;
-		font-size: large;
 	}
 }

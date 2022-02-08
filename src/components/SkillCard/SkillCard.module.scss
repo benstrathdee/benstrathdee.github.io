@@ -1,21 +1,25 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
 .SkillCard {
+	@extend %transitionFast;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	transition: all 0.5s;
 	&__Invis {
 		@extend .SkillCard;
-		transition: all 0.5s;
-		-webkit-transition: all 0.5s;
 		opacity: 0;
 	}
 	&_ContentBox {
 		height: 100%;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
+		& p {
+			margin: 10px;
+		}
 	}
 	&_ProjectsBox {
 		width: 100%;
@@ -25,8 +29,5 @@
 	}
 }
 .HorizontalRule {
-	height: 1px;
-	background-color: gray;
-	border: none;
-	width: 100%;
+	@extend %horizontalRule;
 }

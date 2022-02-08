@@ -1,0 +1,34 @@
+$xsmax: 480px; //extra small
+$smmin: 481px; //small
+$smmax: 768px;
+$mdmin: 769px; //medium
+$mdmax: 1024px;
+$lgmin: 1025px; //large
+$lgmax: 1200px;
+$xlmin: 1201px; //extra large
+
+@mixin xsmall {
+	@media only screen and (max-width: $xsmax) {
+		@content;
+	}
+}
+@mixin small {
+	@media only screen and (min-width: $smmin) and (max-width: $smmax) {
+		@content;
+	}
+}
+@mixin medium {
+	@media only screen and (min-width: $mdmin) and (max-width: $mdmax) {
+		@content;
+	}
+}
+@mixin large {
+	@media only screen and (min-width: $lgmin) and (max-width: $lgmax) {
+		@content;
+	}
+}
+@mixin xlarge {
+	@media only screen and (min-width: $xlmin) {
+		@content;
+	}
+}

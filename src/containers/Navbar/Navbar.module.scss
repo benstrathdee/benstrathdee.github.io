@@ -1,14 +1,17 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
 .Navbar {
-	transition: all 0.5s;
+	@extend %transitionSlow;
 	z-index: 10;
 	position: absolute;
 	height: 3rem;
 	width: 100vmax;
 	display: flex;
-	color: whitesmoke;
+	color: $primary-font-color;
 	justify-content: space-evenly;
 	align-items: center;
-	background-color: rgba(29, 21, 65, 0.2);
+	background-color: $primary-bg-color;
 	margin: 0;
 	padding: 0;
 	list-style: none;

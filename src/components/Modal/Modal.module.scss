@@ -1,27 +1,25 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
 .Modal {
+	@extend %centerFlex;
+	@extend %transitionFast;
+	background: $secondary-bg-color;
 	position: fixed;
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(9, 7, 14, 0.5);
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	&_Content {
+		@extend %centerFlex;
+		@extend %border;
+		background-color: $primary-modalbg-color;
+		color: $primary-font-color;
 		pointer-events: auto;
 		padding: 20px;
-		background-color: rgba(0, 0, 0, 0.9);
-		color: whitesmoke;
-		border: 2px solid gray;
-		border-radius: 4px;
 		display: grid;
 		grid-template-areas: "image header" "image body";
 		width: 40vw;
-		@media only screen and (max-width: 800px) {
-			display: flex;
-			flex-direction: column;
-		}
 		align-items: center;
 		padding: 20px;
 	}
@@ -32,27 +30,45 @@
 		justify-content: right;
 		align-items: flex-start;
 		& button {
-			color: white;
+			color: $primary-font-color;
+			background-color: $secondary-bg-color;
 			border: 0;
-			background-color: black;
 			font-weight: bold;
 		}
 	}
-	&_ThumbWrapper {
+	&_ImageWrapper {
+		@extend %centerFlex;
+		@extend %border;
 		grid-area: image;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
-	&_Thumb {
+	&_Image {
 		max-height: 300px;
-		border: 3px solid black;
-		border-radius: 10px;
-		box-shadow: 0px 10px 13px -7px black;
+		// box-shadow: 0px 10px 13px -7px white;
 	}
 	&_Body {
 		margin-left: 20px;
 		grid-area: body;
 	}
+	&_Button {
+		@extend %transitionFast;
+		cursor: pointer;
+		&:hover {
+			@extend .Modal_Button;
+			color: $secondary-highlight-color;
+		}
+	}
+	&_LinkIcon {
+		color: $primary-font-color;
+		&:active {
+			color: inherit;
+		}
+		&:visited {
+			color: inherit;
+		}
+	}
 	z-index: 2;
+	&__Invis {
+		@extend .Modal;
+		opacity: 0;
+	}
 }

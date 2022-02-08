@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./About.module.scss";
+import { StateContext } from "../../context/StateContext/StateContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
+import { aboutList } from "../../content/AboutContent/AboutContent";
 
 const About = () => {
 	const { show } = useContext(StateContext);
@@ -15,45 +14,24 @@ const About = () => {
 					<h3>My Links</h3>
 				</div>
 				<ul className={styles.LinksList}>
-					<a
-						href="https://github.com/benstrathdee"
-						target="_blank"
-						rel="noreferrer"
-						className={styles.Link}
-					>
-						<li className={styles.LinksList_Item}>
-							<div>
-								<FontAwesomeIcon icon={faGithub} />
-							</div>
-							<div>GitHub</div>
-						</li>
-					</a>
-					<a
-						href="https://www.linkedin.com/in/ben-strathdee-25b29b226/"
-						target="_blank"
-						rel="noreferrer"
-						className={styles.Link}
-					>
-						<li className={styles.LinksList_Item}>
-							<div>
-								<FontAwesomeIcon icon={faLinkedin} />
-							</div>
-							<div>LinkedIn</div>
-						</li>
-					</a>
-					<a
-						href="mailto:ben.strathdee@live.com.au"
-						target="_blank"
-						rel="noreferrer"
-						className={styles.Link}
-					>
-						<li className={styles.LinksList_Item}>
-							<div>
-								<FontAwesomeIcon icon={faEnvelopeSquare} />
-							</div>
-							<div>Email</div>
-						</li>
-					</a>
+					{aboutList.map((link, index) => {
+						return (
+							<a
+								href={link.address}
+								target="_blank"
+								rel="noreferrer"
+								className={styles.Link}
+								key={index}
+							>
+								<li className={styles.LinksList_Item}>
+									<div>
+										<FontAwesomeIcon icon={link.icon} />
+									</div>
+									<div>{link.title}</div>
+								</li>
+							</a>
+						);
+					})}
 				</ul>
 				<div className={styles.Card_Info}>
 					<h3>About Me</h3>
