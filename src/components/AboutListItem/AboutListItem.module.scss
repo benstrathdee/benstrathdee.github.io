@@ -2,38 +2,38 @@
 @import "./../../styles/partials/mixins";
 
 .ItemWrapper {
-	text-decoration: none;
-	display: flex;
-	justify-content: space-between;
-	width: 102%; // this is a super weird value, but it doesn't look right otherwise
-	color: inherit;
-	&:visited {
-		color: inherit;
-	}
-	&:active {
-		color: inherit;
-	}
-	&_Item {
-		cursor: pointer;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 100%;
-		padding: 10px;
-		margin: 5px;
-		border-radius: 2px;
-		@extend %transitionFast;
-		&:hover {
-			background-color: $primary-highlight-color;
-			@extend %transitionFast;
-		}
-	}
-	&_Icon {
-		font-size: $primary-icon-size;
-		display: flex;
-		justify-content: space-evenly;
-	}
-	&_Title {
-		color: $primary-font-color;
-	}
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: inherit;
+    &:visited {
+        color: inherit;
+    }
+    &:active {
+        color: inherit;
+    }
+    &_Item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 2px;
+        @extend %transitionFast;
+        &:hover {
+            background-color: $primary-highlight-color;
+            @extend %transitionFast;
+        }
+    }
+    &_Icon {
+        font-size: $primary-icon-size;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &_Title {
+        color: $primary-font-color;
+    }
 }
