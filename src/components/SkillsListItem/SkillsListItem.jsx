@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { wait } from "@testing-library/user-event/dist/utils";
 import { useContext } from "react";
 import styles from "./SkillsListItem.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StateContext } from "../../context/StateContext/StateContext";
-import { useEffect } from "react/cjs/react.development";
 
 const SkillsListItem = ({ skill }) => {
-    const { activeSkill, setActiveSkill, showSkill, setShowSkill } =
+    const { activeSkill, setActiveSkill, setShowSkill } =
         useContext(StateContext);
 
     const handleSkill = async (skill) => {

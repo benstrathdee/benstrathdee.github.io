@@ -1,11 +1,10 @@
 import { wait } from "@testing-library/user-event/dist/utils";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./Skills.module.scss";
 import SkillsListItem from "../../components/SkillsListItem/SkillsListItem";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import { skillsList } from "../../content/SkillsContent";
-import { useEffect } from "react";
 
 const Skills = () => {
     const { show, showSkill, setShowSkill, setActiveSkill } =
@@ -25,7 +24,7 @@ const Skills = () => {
         if (skillsList.length !== 0) {
             setActiveSkill(skillsList[0]);
         }
-    }, []);
+    }, [setActiveSkill]);
 
     return (
         <div className={skillsClass}>
