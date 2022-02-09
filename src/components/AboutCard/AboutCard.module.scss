@@ -1,0 +1,12 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
+.AboutCard {
+	&_Title {
+		text-align: center;
+		font-weight: lighter;
+	}
+	&_HorizontalRule {
+		@extend %horizontalRule;
+	}
+}

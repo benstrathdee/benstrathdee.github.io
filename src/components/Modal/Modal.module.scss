@@ -5,6 +5,7 @@
 	@extend %centerFlex;
 	@extend %transitionFast;
 	background: $secondary-bg-color;
+	z-index: 10;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -29,21 +30,12 @@
 		display: flex;
 		justify-content: right;
 		align-items: flex-start;
-		& button {
-			color: $primary-font-color;
-			background-color: $secondary-bg-color;
-			border: 0;
-			font-weight: bold;
-		}
 	}
 	&_ImageWrapper {
 		@extend %centerFlex;
 		@extend %border;
 		grid-area: image;
-	}
-	&_Image {
 		max-height: 300px;
-		// box-shadow: 0px 10px 13px -7px white;
 	}
 	&_Body {
 		margin-left: 20px;
@@ -51,6 +43,10 @@
 	}
 	&_Button {
 		@extend %transitionFast;
+		color: $primary-font-color;
+		background-color: $secondary-bg-color;
+		border: 0;
+		font-weight: bold;
 		cursor: pointer;
 		&:hover {
 			@extend .Modal_Button;
@@ -58,6 +54,7 @@
 		}
 	}
 	&_LinkIcon {
+		font-size: $secondary-icon-size;
 		color: $primary-font-color;
 		&:active {
 			color: inherit;
@@ -66,7 +63,6 @@
 			color: inherit;
 		}
 	}
-	z-index: 2;
 	&__Invis {
 		@extend .Modal;
 		opacity: 0;

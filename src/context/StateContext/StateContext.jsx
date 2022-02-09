@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import { skillOne } from "../../content/SkillsContent/SkillsContent";
 
 export const StateContext = createContext();
 
@@ -11,7 +10,11 @@ export const StateProvider = ({ children }) => {
 	const [showModal, setShowModal] = useState(false);
 	const [modalContent, setModalContent] = useState({});
 
-	const [activeSkill, setActiveSkill] = useState(skillOne);
+	const [activeSkill, setActiveSkill] = useState({
+		title: "",
+		content: ["Please select a skill from the list to see an overview."],
+		projects: [],
+	});
 
 	const data = {
 		page,

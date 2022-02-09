@@ -52,56 +52,18 @@
 			font-weight: lighter;
 		}
 	}
-}
-
-.SkillsList {
-	@extend %templateCard;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	margin-top: 0;
-	grid-area: list;
-	overflow-y: scroll;
-	padding: 5px;
-	list-style: none;
-	padding-left: 0;
-	&_Item {
-		@extend %transitionFast;
-		cursor: pointer;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		padding: 10px;
-		margin: 5px;
-		border-radius: 2px;
-		&:hover {
-			@extend %transitionFast;
-			background-color: $primary-highlight-color;
+	&_List {
+		@extend %templateCard;
+		&::-webkit-scrollbar {
+			display: none;
 		}
-		&__Current {
-			@extend .SkillsList_Item;
-			background-color: $primary-highlight-color;
-		}
-	}
-}
-
-.ItemWrapper {
-	text-decoration: none;
-	display: flex;
-	justify-content: space-between;
-	width: 102%; // this is a super weird value, but it doesn't look right otherwise
-}
-
-.ProjectsBox {
-	@extend %transitionSlow;
-	width: 100%;
-	height: 40%;
-	display: flex;
-	flex-direction: column;
-	&_HorizontalRule {
-		@extend %transitionSlow;
-		@extend %horizontalRule;
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		margin-top: 0;
+		grid-area: list;
+		overflow-y: scroll;
+		padding: 5px;
+		list-style: none;
+		padding-left: 0;
 	}
 }

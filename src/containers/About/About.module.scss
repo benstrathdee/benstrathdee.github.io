@@ -46,58 +46,20 @@
 		}
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
-		& h3 {
-			text-align: center;
-			font-weight: lighter;
+	}
+	&_List {
+		@extend %templateCard;
+		&::-webkit-scrollbar {
+			display: none;
 		}
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		grid-area: list;
+		margin-top: 0;
+		overflow-y: scroll;
+		padding: 5px;
+		width: auto;
+		list-style: none;
+		padding-left: 0;
 	}
-}
-
-.LinksList {
-	@extend %templateCard;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-	grid-area: list;
-	margin-top: 0;
-	overflow-y: scroll;
-	padding: 5px;
-	width: auto;
-	list-style: none;
-	padding-left: 0;
-	&_Item {
-		cursor: pointer;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 100%;
-		padding: 10px;
-		margin: 5px;
-		border-radius: 2px;
-		@extend %transitionFast;
-		&:hover {
-			background-color: $primary-highlight-color;
-			@extend %transitionFast;
-		}
-	}
-}
-
-.Link {
-	text-decoration: none;
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	color: inherit;
-	&:visited {
-		color: inherit;
-	}
-	&:active {
-		color: inherit;
-	}
-}
-
-.HorizontalRule {
-	@extend %horizontalRule;
 }

@@ -1,14 +1,14 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
 
-.CarouselCard {
+.ProjectCard {
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-items: center;
-	height: $carouselcard-height;
-	width: $carouselcard-width;
+	height: $projectcard-height;
+	width: $projectcard-width;
 	position: relative;
 }
 .ImageWrapper {
@@ -17,8 +17,8 @@
 	align-items: center;
 	&_Image {
 		object-fit: cover;
-		height: $carouselcard-height;
-		width: $carouselcard-width;
+		height: $projectcard-height;
+		width: $projectcard-width;
 	}
 }
 .InfoWrapper {
@@ -27,8 +27,8 @@
 	bottom: 0;
 	left: 0;
 	z-index: 1;
-	height: $carouselcard-height;
-	width: $carouselcard-width;
+	height: $projectcard-height;
+	width: $projectcard-width;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;

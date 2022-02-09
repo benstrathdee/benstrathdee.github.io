@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { StateContext } from "../../context/StateContext/StateContext";
-import styles from "./CarouselCard.module.scss";
+import styles from "./ProjectCard.module.scss";
 
-const CarouselCard = ({ project }) => {
+const ProjectCard = ({ project }) => {
 	const { setShowModal, setModalContent } = useContext(StateContext);
 
 	const handleModal = () => {
@@ -11,7 +11,7 @@ const CarouselCard = ({ project }) => {
 	};
 
 	return (
-		<div className={styles.CarouselCard}>
+		<div className={styles.ProjectCard}>
 			<div className={styles.ImageWrapper}>
 				<img
 					src={project.projectImage}
@@ -26,4 +26,4 @@ const CarouselCard = ({ project }) => {
 	);
 };
 
-export default CarouselCard;
+export default ProjectCard;

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ProjectsCarousel from "../../containers/ProjectsCarousel/ProjectsCarousel";
+import ProjectsBox from "../../containers/ProjectsBox/ProjectsBox";
 import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./SkillCard.module.scss";
 
@@ -21,7 +21,7 @@ const SkillCard = () => {
 				<div className={styles.SkillCard_ProjectsBox}>
 					<hr className={styles.HorizontalRule} />
 					<h3>Related Projects</h3>
-					<ProjectsCarousel />
+					<ProjectsBox />
 				</div>
 			)}
 		</div>

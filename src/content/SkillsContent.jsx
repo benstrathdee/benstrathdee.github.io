@@ -14,9 +14,9 @@ import {
 	faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { OldPortfolio, HTMLCalculator } from "./../../images";
+import { OldPortfolio, HTMLCalculator } from "../images";
 
-export const skillOne = {
+const skillOne = {
 	title: "HTML / CSS / SASS",
 	number: 1,
 	content: [
@@ -42,49 +42,56 @@ export const skillOne = {
 	],
 	icons: [faHtml5, faCss3, faSass],
 };
-export const skillTwo = {
+
+const skillTwo = {
 	title: "JavaScript / ReactJS",
 	number: 2,
 	content: ["blah blah blah"],
 	projects: [],
 	icons: [faJsSquare, faReact],
 };
-export const skillThree = {
+
+const skillThree = {
 	title: "Java",
 	number: 3,
 	content: ["blah blah blah"],
 	projects: [],
 	icons: [faJava],
 };
-export const skillFour = {
+
+const skillFour = {
 	title: "Git (Git Bash)",
 	number: 4,
 	content: ["blah blah blah"],
 	projects: [],
 	icons: [faGit],
 };
-export const skillFive = {
+
+const skillFive = {
 	title: "TDD (Jest / JUnit)",
 	number: 5,
 	content: ["blah blah blah"],
 	projects: [],
 	icons: [faFileSignature],
 };
-export const skillSix = {
+
+const skillSix = {
 	title: "SQL (MySQL)",
 	number: 6,
 	content: ["blah blah blah"],
 	projects: [],
 	icons: [faDatabase],
 };
-export const skillSeven = {
+
+const skillSeven = {
 	title: "Google Firestore",
 	number: 7,
 	content: ["blah blah blah"],
 	projects: [],
 	icons: [faFireAlt],
 };
-export const skillEight = {
+
+const skillEight = {
 	title: "Misc.",
 	number: 8,
 	content: ["blah blah blah"],

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styles from "./DisplayWindow.module.scss";
-import Home from "./../../components/Home/Home";
-import Skills from "./../../components/Skills/Skills";
-import About from "./../../components/About/About";
+import Home from "./../Home";
+import Skills from "./../Skills";
+import About from "./../About";
 import { StateContext } from "../../context/StateContext/StateContext";
 import { wait } from "@testing-library/user-event/dist/utils";
 import { useEffect } from "react";
