@@ -1,0 +1,12 @@
+.CardWrapper {
+    @extend %centerFlex;
+    @extend %transitionSlow;
+    opacity: 1;
+    height: 100%;
+    width: 100vw;
+    flex-direction: column;
+    &__Invis {
+        @extend .About;
+        opacity: 0;
+    }
+}

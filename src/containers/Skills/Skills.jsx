@@ -2,9 +2,10 @@ import { wait } from "@testing-library/user-event/dist/utils";
 import React, { useContext, useEffect } from "react";
 import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./Skills.module.scss";
-import SkillsListItem from "../../components/SkillsListItem/SkillsListItem";
 import SkillCard from "../../components/SkillCard/SkillCard";
 import { skillsList } from "../../content/SkillsContent";
+import CardListSkills from "../CardListSkills/CardListSkills";
+import CardTitle from "../CardTitle/CardTitle";
 
 const Skills = () => {
     const { show, showSkill, setShowSkill, setActiveSkill } =
@@ -29,20 +30,8 @@ const Skills = () => {
     return (
         <div className={skillsClass}>
             <div className={styles.Card}>
-                <div className={styles.Card_Title}>
-                    <h3>My Skills</h3>
-                </div>
-                <ul className={styles.Card_List}>
-                    {skillsList.map((skill, index) => {
-                        return (
-                            <SkillsListItem
-                                skill={skill}
-                                key={index}
-                                index={index + 1}
-                            />
-                        );
-                    })}
-                </ul>
+                <CardTitle title="My Skills" />
+                <CardListSkills listItems={skillsList} />
                 <div className={styles.Card_Info}>
                     <SkillCard />
                 </div>

@@ -9,37 +9,37 @@ import { useEffect } from "react";
 import Modal from "../../components/Modal/Modal";
 
 const DisplayWindow = () => {
-	const { page, setShow, show } = useContext(StateContext);
-	const getElement = () => {
-		switch (page) {
-			case "Home":
-				return <Home />;
-			case "Skills / Projects":
-				return <Skills />;
-			case "About / Contact":
-				return <About />;
-			default:
-				return <Home />;
-		}
-	};
+    const { page, setShow, show } = useContext(StateContext);
+    const getElement = () => {
+        switch (page) {
+            case "Home":
+                return <Home />;
+            case "Skills / Projects":
+                return <Skills />;
+            case "About / Contact":
+                return <About />;
+            default:
+                return <Home />;
+        }
+    };
 
-	const firstLoad = async () => {
-		if (show === false) {
-			await wait(500);
-			setShow(true);
-		}
-	};
+    const firstLoad = async () => {
+        if (show === false) {
+            await wait(500);
+            setShow(true);
+        }
+    };
 
-	useEffect(() => {
-		firstLoad();
-	});
+    useEffect(() => {
+        firstLoad();
+    }, [firstLoad]);
 
-	return (
-		<div className={styles.DisplayWindow}>
-			{getElement()}
-			<Modal />
-		</div>
-	);
+    return (
+        <div className={styles.DisplayWindow}>
+            {getElement()}
+            <Modal />
+        </div>
+    );
 };
 
 export default DisplayWindow;

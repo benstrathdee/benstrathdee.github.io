@@ -29,19 +29,17 @@ const SkillsListItem = ({ skill }) => {
     }, []);
 
     return (
-        <div className={styles.ItemWrapper}>
-            <li
-                id={skill.id}
-                className={styles.ItemWrapper_Item}
-                onClick={() => handleSkill(skill)}
-            >
-                <div className={styles.ItemWrapper_Icons}>
-                    {skill.icons.map((icon, iconIndex) => {
-                        return <FontAwesomeIcon icon={icon} key={iconIndex} />;
-                    })}
-                </div>
-                <div className={styles.ItemWrapper_Title}>{skill.title}</div>
-            </li>
+        <div
+            id={skill.id}
+            className={styles.ItemWrapper_Item}
+            onClick={() => handleSkill(skill)}
+        >
+            <div className={styles.ItemWrapper_Icons}>
+                {skill.icons.map((icon, iconIndex) => {
+                    return <FontAwesomeIcon icon={icon} key={iconIndex} />;
+                })}
+            </div>
+            <div className={styles.ItemWrapper_Title}>{skill.title}</div>
         </div>
     );
 };
