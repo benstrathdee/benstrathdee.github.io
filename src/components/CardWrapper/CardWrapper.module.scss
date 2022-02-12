@@ -1,0 +1,44 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
+.CardWrapper {
+	@extend %centerFlex;
+	@extend %transitionSlow;
+	opacity: 1;
+	height: 100%;
+	width: 100vw;
+	flex-direction: column;
+	&__Invis {
+		@extend .CardWrapper;
+		opacity: 0;
+	}
+}
+
+.Card {
+	background-color: $primary-bg-color;
+	&__Large {
+		@extend .Card;
+		margin-top: 4vw;
+		width: 90vw;
+		height: 80%;
+		border-radius: 10px;
+		display: grid;
+		grid-template-rows: 1fr 6fr;
+		grid-template-columns: 1fr 4fr;
+		grid-template-areas: "title info" "list info";
+	}
+	&__Medium {
+		@extend .Card;
+		margin-top: 4vw;
+		width: 50vw;
+		height: 80%;
+		border-radius: 10px;
+		display: grid;
+		grid-template-rows: 1fr 6fr;
+		grid-template-columns: 1fr 4fr;
+		grid-template-areas: "title info" "list info";
+	}
+	&__Small {
+		@extend .Card;
+	}
+}

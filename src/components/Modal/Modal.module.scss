@@ -35,7 +35,10 @@
 		@extend %centerFlex;
 		@extend %border;
 		grid-area: image;
+	}
+	&_Image {
 		max-height: 300px;
+		max-width: 300px;
 	}
 	&_Body {
 		margin-left: 20px;

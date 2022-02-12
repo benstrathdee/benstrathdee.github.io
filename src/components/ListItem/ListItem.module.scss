@@ -1,0 +1,40 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+
+.ListItem {
+	@extend %transitionFast;
+	cursor: pointer;
+	color: $primary-font-color;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	padding: 10px;
+	margin: 5px;
+	border-radius: 2px;
+	&_Icons {
+		font-size: $primary-icon-size;
+		display: flex;
+		justify-content: space-evenly;
+	}
+	&_Title {
+		color: $primary-font-color;
+	}
+	&:hover {
+		@extend %transitionFast;
+		background-color: $primary-highlight-color;
+	}
+	&_Link {
+		color: $primary-font-color;
+		text-decoration: none;
+		&:active {
+			@extend .ListItem_Link;
+		}
+		&:visited {
+			@extend .ListItem_Link;
+		}
+	}
+	&__Active {
+		@extend .ListItem;
+		background-color: $primary-highlight-color;
+	}
+}

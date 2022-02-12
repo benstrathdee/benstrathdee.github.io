@@ -1,36 +1,37 @@
 import React, { createContext, useState } from "react";
-import { skillsList } from "../../content/SkillsContent";
 
 export const StateContext = createContext();
 
 export const StateProvider = ({ children }) => {
-    const [page, setPage] = useState("Home");
-    const [active, setActive] = useState("Home");
-    const [show, setShow] = useState(false);
-    const [showSkill, setShowSkill] = useState(false);
-    const [showModal, setShowModal] = useState(false);
-    const [modalContent, setModalContent] = useState({});
+	const [page, setPage] = useState("Home");
+	const [active, setActive] = useState("Home");
+	const [show, setShow] = useState(false);
+	const [showContent, setShowContent] = useState(false);
+	const [showModal, setShowModal] = useState(false);
+	const [modalContent, setModalContent] = useState({});
+	const [activeItem, setActiveItem] = useState("item1");
+	const [activeListItem, setActiveListItem] = useState("item1");
 
-    const [activeSkill, setActiveSkill] = useState(skillsList[0]);
+	const data = {
+		page,
+		setPage,
+		active,
+		setActive,
+		show,
+		setShow,
+		showContent,
+		setShowContent,
+		showModal,
+		setShowModal,
+		modalContent,
+		setModalContent,
+		activeItem,
+		setActiveItem,
+		activeListItem,
+		setActiveListItem,
+	};
 
-    const data = {
-        page,
-        setPage,
-        active,
-        setActive,
-        show,
-        setShow,
-        activeSkill,
-        setActiveSkill,
-        showSkill,
-        setShowSkill,
-        showModal,
-        setShowModal,
-        modalContent,
-        setModalContent,
-    };
-
-    return (
-        <StateContext.Provider value={data}>{children}</StateContext.Provider>
-    );
+	return (
+		<StateContext.Provider value={data}>{children}</StateContext.Provider>
+	);
 };

@@ -51,7 +51,11 @@ const Modal = () => {
 					</button>
 				</div>
 				<div className={styles.Modal_ImageWrapper}>
-					<img src={modalContent.projectImage} alt="" />
+					<img
+						src={modalContent.projectImage}
+						alt="Project Preview"
+						className={styles.Modal_Image}
+					/>
 				</div>
 				<div className={styles.Modal_Body}>
 					<h4>{modalContent.name}</h4>
