@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3e09b0c8.css",
-    "main.js": "/static/js/main.65c3e6b8.js",
+    "main.css": "/static/css/main.a88f4452.css",
+    "main.js": "/static/js/main.bd62de5e.js",
     "static/js/787.8d4efb73.chunk.js": "/static/js/787.8d4efb73.chunk.js",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "static/media/old_portfolio.jpg": "/static/media/old_portfolio.37b4df74ca5193a6e510.jpg",
@@ -9,12 +9,12 @@
     "static/media/html_calculator.png": "/static/media/html_calculator.5f1681aaf7e16c6ff9db.png",
     "static/media/morse_code.png": "/static/media/morse_code.096764025474bf084313.png",
     "index.html": "/index.html",
-    "main.3e09b0c8.css.map": "/static/css/main.3e09b0c8.css.map",
-    "main.65c3e6b8.js.map": "/static/js/main.65c3e6b8.js.map",
+    "main.a88f4452.css.map": "/static/css/main.a88f4452.css.map",
+    "main.bd62de5e.js.map": "/static/js/main.bd62de5e.js.map",
     "787.8d4efb73.chunk.js.map": "/static/js/787.8d4efb73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e09b0c8.css",
-    "static/js/main.65c3e6b8.js"
+    "static/css/main.a88f4452.css",
+    "static/js/main.bd62de5e.js"
   ]
 }
