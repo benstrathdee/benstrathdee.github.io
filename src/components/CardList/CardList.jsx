@@ -1,29 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./CardList.module.scss";
 import ListItem from "../ListItem";
 import { StateContext } from "../../context/StateContext/StateContext";
 
-const CardList = ({ listItems, selectable, show }) => {
-	const { activeItem, setActiveItem, activeListItem, setActiveListItem } =
+const CardList = ({ listItems, selectable, size }) => {
+	const { setActiveListItem, windowIsHorizontal, showPage } =
 		useContext(StateContext);
+
+	const listClass =
+		size === "small" ? styles.CardList__Small : styles.CardList;
 
 	useEffect(() => {
 		setActiveListItem("item1");
-	}, [show]);
+	}, [showPage]);
 
-	return (
-		<div className={styles.CardList}>
+	return !windowIsHorizontal ? null : (
+		<div className={listClass}>
 			{listItems.map((item, index) => {
 				return (
-					<ListItem
-						item={item}
-						key={index}
-						activeItem={activeItem}
-						setActiveItem={setActiveItem}
-						activeListItem={activeListItem}
-						setActiveListItem={setActiveListItem}
-						selectable={selectable}
-					/>
+					<ListItem key={index} item={item} selectable={selectable} />
 				);
 			})}
 		</div>

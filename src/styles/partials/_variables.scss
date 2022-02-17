@@ -1,6 +1,10 @@
+@import "./devices.scss";
+
 // COLOURS
 $primary-font-color: whitesmoke;
 $secondary-font-color: gray;
+
+$primary-fonthl-color: rgb(217, 158, 145);
 
 $primary-bg-color: rgba(29, 21, 65, 0.3);
 $secondary-bg-color: rgba(0, 0, 0, 0.5);
@@ -8,16 +12,16 @@ $base-bg-color: rgba(0, 0, 0, 0.2);
 
 $primary-modalbg-color: rgba(0, 0, 0, 0.9);
 
-$primary-highlight-color: rgba(255, 255, 255, 0.2);
+$primary-highlight-color: rgba(184, 190, 191, 0.2);
 $secondary-highlight-color: red;
 
 $primary-border-color: gray;
 
-$primary-vertnav-color: black;
+$primary-vertnav-color: rgb(104, 115, 129);
 
 // DIMENSIONS
-$projectcard-height: 9vw;
-$projectcard-width: 9vw;
+$nav-height: 3rem;
+$vertnav-height: 3em;
 
 // FONT SIZES
 $primary-icon-size: 1.5em;

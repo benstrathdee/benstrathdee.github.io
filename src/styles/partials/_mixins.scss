@@ -1,34 +1,72 @@
+@use "./../../styles/partials/devices.scss";
+
 %border {
-    border: 2px solid $primary-border-color;
+	border: 2px solid $primary-border-color;
+}
+
+%noScrollBar {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+%noLinkDeco {
+	color: $primary-font-color;
+	text-decoration: none;
+	&:active {
+		color: inherit;
+	}
+	&:visited {
+		color: inherit;
+	}
 }
 
 %horizontalRule {
-    @extend %border;
-    border-radius: 2px;
-    clear: both;
-    height: 0;
-    width: 96%;
+	border: 1px solid $primary-border-color;
+	margin: 0;
+	margin-bottom: 10px;
+	clear: both;
+	height: 0;
+	width: 98%;
 }
 
 %templateCard {
-    color: $primary-font-color;
-    background-color: $secondary-bg-color;
-    margin: 20px;
-    @extend %border;
+	color: $primary-font-color;
+	background-color: $secondary-bg-color;
+	@include xsmall {
+		margin: 10px;
+	}
+	@include small {
+		margin: 10px;
+	}
+	@include medium {
+		margin: 20px;
+	}
+	@extend %border;
 }
 
 %centerFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-%transitionSlow {
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
+%centerFlexColumn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-%transitionFast {
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
+@mixin transition($time) {
+	transition: opacity $time, color $time, background-color $time, top $time,
+		border $time, text-shadow $time;
+	-webkit-transition: opacity $time, color $time, background-color $time,
+		top $time, border $time, text-shadow $time;
+}
+
+@mixin cardDimensions($value) {
+	height: $value;
+	width: $value;
 }

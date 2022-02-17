@@ -10,13 +10,18 @@ import { skillsList } from "../../content/SkillsContent";
 import { aboutList } from "../../content/AboutContent";
 
 const DisplayWindow = () => {
-	const { page, setShow, show } = useContext(StateContext);
+	const { activePage, showPage, setShowPage, windowIsHorizontal } =
+		useContext(StateContext);
 
-	const getElement = () => {
-		switch (page) {
+	const windowClass = windowIsHorizontal
+		? styles.DisplayWindow
+		: styles.DisplayWindow__Vertical;
+
+	const getPage = () => {
+		switch (activePage) {
 			case "Home":
 				return <Home />;
-			case "Skills / Projects":
+			case "Skills":
 				return (
 					<CardWrapper
 						title="My Skills"
@@ -24,16 +29,18 @@ const DisplayWindow = () => {
 						selectable={true}
 						content={skillsList}
 						size="large"
+						linkBox={false}
 					/>
 				);
-			case "About / Contact":
+			case "About Me":
 				return (
 					<CardWrapper
 						title="My Links"
 						listItems={aboutList}
 						selectable={false}
 						content={aboutList}
-						size="medium"
+						size="small"
+						linkBox={true}
 					/>
 				);
 			default:
@@ -41,20 +48,20 @@ const DisplayWindow = () => {
 		}
 	};
 
-	const showPage = async () => {
-		if (show === false) {
+	const doShowPage = async () => {
+		if (showPage === false) {
 			await wait(500);
-			setShow(true);
+			setShowPage(true);
 		}
 	};
 
 	useEffect(() => {
-		showPage();
+		doShowPage();
 	}, []);
 
 	return (
-		<div className={styles.DisplayWindow}>
-			{getElement()}
+		<div className={windowClass}>
+			{getPage()}
 			<Modal />
 		</div>
 	);

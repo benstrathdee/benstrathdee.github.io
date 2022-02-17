@@ -6,44 +6,64 @@ import styles from "./CardWrapper.module.scss";
 import { StateContext } from "../../context/StateContext/StateContext";
 import { wait } from "@testing-library/user-event/dist/utils";
 
-const CardWrapper = ({ title, listItems, selectable, content, size }) => {
-	const { show, setActiveItem, setActiveListItem } = useContext(StateContext);
+const CardWrapper = ({
+	title,
+	listItems,
+	selectable,
+	content,
+	size,
+	linkBox,
+}) => {
+	const {
+		showPage,
+		setActiveContent,
+		setActiveListItem,
+		windowIsHorizontal,
+	} = useContext(StateContext);
 
-	const wrapperClass = show ? styles.CardWrapper : styles.CardWrapper__Invis;
+	const getWrapperClass = () => {
+		if (windowIsHorizontal) {
+			return showPage ? styles.CardWrapper : styles.CardWrapper__Invis;
+		}
+		return showPage
+			? styles.CardWrapperVertical
+			: styles.CardWrapperVertical__Invis;
+	};
 
 	const getCardClass = () => {
-		switch (size) {
-			case "small":
-				return styles.Card__Small;
-			case "medium":
-				return styles.Card__Medium;
-			case "large":
-				return styles.Card__Large;
-			default:
-				return styles.Card__Large;
+		if (windowIsHorizontal) {
+			switch (size) {
+				case "small":
+					return styles.Card__Small;
+				case "large":
+					return styles.Card__Large;
+				default:
+					return styles.Card__Large;
+			}
 		}
+		return styles.Card__Vertical;
 	};
 
 	const changePage = async () => {
 		await wait(500);
-		setActiveItem("item1");
+		setActiveContent("item1");
 		setActiveListItem("item1");
 	};
 
 	useEffect(() => {
 		changePage();
-	}, [show]);
+	}, [showPage]);
 
 	return (
-		<div className={wrapperClass}>
+		<div className={getWrapperClass()}>
 			<div className={getCardClass()}>
-				<CardTitle title={title} />
+				<CardTitle title={title} size={size} />
 				<CardList
 					listItems={listItems}
 					selectable={selectable}
 					size={size}
 				/>
-				<CardContent content={content} />
+				<CardContent content={content} linkBox={linkBox} />
 			</div>
 		</div>
 	);

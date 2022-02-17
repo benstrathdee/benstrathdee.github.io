@@ -1,23 +1,28 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
+@use "./../../styles/partials/devices.scss";
 
 .Home {
 	@extend %centerFlex;
-	@extend %transitionFast;
+	@include transition(0.3s);
 	color: $primary-font-color;
-	opacity: 1;
-	height: 100%;
-	width: 100vw;
 	flex-direction: column;
+	height: 100%;
 	&_Title {
-		font-size: 9vh;
 		margin: 0;
 		text-shadow: 3px 2px 3px $primary-highlight-color,
 			0px 3px 10px $primary-border-color;
+		font-size: 7vh;
+		@include medium {
+			font-size: 9vh;
+		}
 	}
 	&_Subtitle {
 		@extend .Home_Title;
-		font-size: 7vh;
+		font-size: 5vh;
+		@include medium {
+			font-size: 7vh;
+		}
 	}
 	&__Invis {
 		@extend .Home;

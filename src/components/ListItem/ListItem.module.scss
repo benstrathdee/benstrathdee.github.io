@@ -2,12 +2,9 @@
 @import "./../../styles/partials/mixins";
 
 .ListItem {
-	@extend %transitionFast;
-	cursor: pointer;
+	@include transition(0.3s);
 	color: $primary-font-color;
-	display: flex;
-	flex-direction: column;
-	width: 80%;
+	cursor: pointer;
 	padding: 10px;
 	margin: 5px;
 	border-radius: 2px;
@@ -19,19 +16,12 @@
 	&_Title {
 		color: $primary-font-color;
 	}
-	&:hover {
-		@extend %transitionFast;
-		background-color: $primary-highlight-color;
-	}
 	&_Link {
-		color: $primary-font-color;
-		text-decoration: none;
-		&:active {
-			@extend .ListItem_Link;
-		}
-		&:visited {
-			@extend .ListItem_Link;
-		}
+		@extend %noLinkDeco;
+	}
+	&:hover {
+		@include transition(0.3s);
+		background-color: $primary-highlight-color;
 	}
 	&__Active {
 		@extend .ListItem;

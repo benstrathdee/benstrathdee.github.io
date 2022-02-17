@@ -1,42 +1,41 @@
 @font-face {
-    font-family: "Roboto";
-    src: local("Robot"),
-        url(./fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+	font-family: "Roboto";
+	src: local("Roboto"),
+		url(./styles/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
 }
 
 body {
-    margin: 0;
-    font-family: Roboto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 100%;
-    background: url(./images/background.jpg) no-repeat center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    scroll-behavior: smooth;
-    font-size: 20px;
-    height: 100%;
+	margin: 0;
+	font-family: Roboto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	height: 100vh;
+	background: url(./images/background.jpg) no-repeat center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	scroll-behavior: smooth;
+	font-size: 20px;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
 }
 
 html {
-    height: 100%;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
+	height: 100vh;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
 						supported by Chrome, Edge, Opera and Firefox */
 }
 
 #root {
-    height: 100%;
+	height: 100vh;
 }

@@ -1,52 +1,54 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
 
-.MenuIcon {
-	cursor: pointer;
-	color: $primary-font-color;
-	position: absolute;
-	z-index: 20;
-	font-size: 2em;
-	left: 0.5em;
-	top: 0.5em;
-}
-
 .Navbar {
-	@extend %transitionSlow;
-	z-index: 10;
-	position: absolute;
-	height: 3rem;
+	@include transition(0.5s);
+	color: $primary-font-color;
+	background-color: $primary-bg-color;
+	height: $nav-height;
 	width: 100vw;
 	display: flex;
-	color: $primary-font-color;
 	justify-content: space-evenly;
 	align-items: center;
-	background-color: $primary-bg-color;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+	z-index: 10;
+	position: absolute;
 }
 
 .NavbarVertical {
-	@extend %transitionSlow;
+	@extend %centerFlex;
+	background-color: $primary-vertnav-color;
+	height: $vertnav-height;
+	z-index: 20;
+	width: 100%;
+	position: fixed;
+	&_MenuIcon {
+		color: $primary-font-color;
+		font-size: $primary-icon-size;
+		cursor: pointer;
+		z-index: 21;
+		position: fixed;
+		left: $vertnav-height / 6;
+		top: $vertnav-height / 6;
+	}
+	&_PageTitle {
+		color: $primary-font-color;
+		font-size: 1.3em;
+		font-weight: lighter;
+	}
+}
+
+.Drawer {
+	@include transition(0.5s);
+	@extend %centerFlexColumn;
+	color: $primary-font-color;
+	background-color: $primary-vertnav-color;
+	padding-top: $vertnav-height;
 	z-index: 10;
 	position: fixed;
-	left: -120%;
-	height: 100%;
+	top: -50%;
 	width: 100vw;
-	display: flex;
-	flex-direction: column;
-	color: $primary-font-color;
-	justify-content: flex-start;
-	align-items: center;
-	background-color: transparent;
-	margin: 0;
-	padding: 0;
-	padding-top: 4em;
-	list-style: none;
 	&__Expanded {
-		@extend .NavbarVertical;
-		background-color: $primary-vertnav-color;
-		left: 0;
+		@extend .Drawer;
+		top: 0;
 	}
 }

@@ -3,19 +3,27 @@ import React, { useContext } from "react";
 import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./NavbarItem.module.scss";
 
-const NavbarItem = ({ name, windowIsHorizontal }) => {
-	const { page, setPage, setActive, active, setShow } =
-		useContext(StateContext);
+const NavbarItem = ({ pageName }) => {
+	const {
+		activePage,
+		setActivePage,
+		setActiveNavbarItem,
+		activeNavbarItem,
+		setShowPage,
+		windowIsHorizontal,
+		navbarIsExpanded,
+		setNavbarIsExpanded,
+	} = useContext(StateContext);
 
 	const getItemClass = () => {
 		if (!windowIsHorizontal) {
-			if (active === name) {
+			if (activeNavbarItem === pageName) {
 				return styles.NavbarItemVertical__Current;
 			} else {
 				return styles.NavbarItemVertical;
 			}
 		} else {
-			if (active === name) {
+			if (activeNavbarItem === pageName) {
 				return styles.NavbarItem__Current;
 			} else {
 				return styles.NavbarItem;
@@ -23,20 +31,25 @@ const NavbarItem = ({ name, windowIsHorizontal }) => {
 		}
 	};
 
-	const changePage = async (name) => {
-		if (page !== name) {
-			setActive(name);
-			setShow(false);
+	const changePage = async (pageName) => {
+		if (activePage !== pageName) {
+			setActiveNavbarItem(pageName);
+			if (navbarIsExpanded) {
+				setNavbarIsExpanded(false);
+			}
+			setShowPage(false);
 			await wait(500);
-			setPage(name);
+			setActivePage(pageName);
 			await wait(50);
-			setShow(true);
+			setShowPage(true);
+		} else if (navbarIsExpanded) {
+			setNavbarIsExpanded(false);
 		}
 	};
 
 	return (
-		<div className={getItemClass()} onClick={() => changePage(name)}>
-			{name}
+		<div className={getItemClass()} onClick={() => changePage(pageName)}>
+			{pageName}
 		</div>
 	);
 };

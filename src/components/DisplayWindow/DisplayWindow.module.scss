@@ -1,6 +1,14 @@
 @import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
 
 .DisplayWindow {
-	height: 100%;
 	background-color: $base-bg-color;
+	height: 100%;
+	&__Vertical {
+		@extend .DisplayWindow;
+		@extend %centerFlexColumn;
+		overflow: scroll;
+		scroll-snap-type: y proximity;
+		scroll-padding: 3.5em;
+	}
 }

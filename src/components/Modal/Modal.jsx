@@ -7,18 +7,17 @@ import { wait } from "@testing-library/user-event/dist/utils";
 
 const Modal = () => {
 	const { showModal, setShowModal, modalContent } = useContext(StateContext);
-	const [show, setShow] = useState(false);
+	const [visible, setVisible] = useState(false);
 
-	const modalClass = show ? styles.Modal : styles.Modal__Invis;
+	const modalClass = visible ? styles.Modal : styles.Modal__Invis;
 
-	useEffect(() => {
-		const close = async (e) => {
-			if (e.key === "Escape") {
-				closeModal();
-			}
-		};
-		window.addEventListener("keydown", close);
-	});
+	const close = async (e) => {
+		if (e.key === "Escape") {
+			closeModal();
+		}
+	};
+
+	window.addEventListener("keydown", close);
 
 	useEffect(() => {
 		if (showModal) {
@@ -27,11 +26,11 @@ const Modal = () => {
 	}, [showModal]);
 
 	const openModal = () => {
-		setShow(true);
+		setVisible(true);
 	};
 
 	const closeModal = async () => {
-		setShow(false);
+		setVisible(false);
 		await wait(300);
 		setShowModal(false);
 	};
@@ -42,35 +41,19 @@ const Modal = () => {
 				className={styles.Modal_Content}
 				onClick={(e) => e.stopPropagation()}
 			>
-				<div className={styles.Modal_Header}>
-					<button
-						className={styles.Modal_Button}
-						onClick={closeModal}
-					>
-						✖
-					</button>
-				</div>
-				<div className={styles.Modal_ImageWrapper}>
-					<img
-						src={modalContent.projectImage}
-						alt="Project Preview"
-						className={styles.Modal_Image}
+				<h4 className={styles.Modal_Title}>{modalContent.name}</h4>
+				<img
+					src={modalContent.projectImage}
+					alt="Project Preview"
+					className={styles.Modal_Image}
+				/>
+				<p>{modalContent.description}</p>
+				<a href={modalContent.link} target="_blank" rel="noreferrer">
+					<FontAwesomeIcon
+						icon={faGithub}
+						className={styles.Modal_LinkIcon}
 					/>
-				</div>
-				<div className={styles.Modal_Body}>
-					<h4>{modalContent.name}</h4>
-					<p>{modalContent.description}</p>
-					<a
-						href={modalContent.link}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<FontAwesomeIcon
-							icon={faGithub}
-							className={styles.Modal_LinkIcon}
-						/>
-					</a>
-				</div>
+				</a>
 			</div>
 		</div>
 	);

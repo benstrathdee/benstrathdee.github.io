@@ -1,0 +1,37 @@
+$xsmax: 479px; //extra small
+$smmin: 480px; //small
+$mdmin: 768px; //medium
+$lgmin: 1024px; //large
+$xlmin: 1200px; //extra large
+$xxlmin: 1600px; // xx large
+
+@mixin xsmall {
+	@media only screen and (max-width: $xsmax) {
+		@content;
+	}
+}
+@mixin small {
+	@media only screen and (min-width: $smmin) {
+		@content;
+	}
+}
+@mixin medium {
+	@media only screen and (min-width: $mdmin) {
+		@content;
+	}
+}
+@mixin large {
+	@media only screen and (min-width: $lgmin) {
+		@content;
+	}
+}
+@mixin xlarge {
+	@media only screen and (min-width: $xlmin) {
+		@content;
+	}
+}
+@mixin xxlarge {
+	@media only screen and (min-width: $xxlmin) {
+		@content;
+	}
+}

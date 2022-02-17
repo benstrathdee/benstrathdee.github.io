@@ -22,8 +22,7 @@ export const linkOne = {
 	on Codewars (4 kyu so far!)`,
 		"",
 		"",
-		`For a better overview of some of my projects, check out the link
-	to my GitHub on the left!`,
+		`For a better overview of some of my projects, check out my GitHub!`,
 		`Interested in contacting me about some work, or seeing what I'm
 	up to? Check me out on LinkedIn, or send me an email!`,
 	],

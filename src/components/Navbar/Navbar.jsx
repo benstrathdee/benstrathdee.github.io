@@ -1,50 +1,52 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import NavbarItem from "../NavbarItem/NavbarItem";
 import styles from "./Navbar.module.scss";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { StateContext } from "../../context/StateContext/StateContext";
 
-const Navbar = ({ windowIsHorizontal }) => {
-	const [isExpanded, setIsExpanded] = useState(false);
+const Navbar = () => {
+	const {
+		windowIsHorizontal,
+		navbarIsExpanded,
+		setNavbarIsExpanded,
+		activePage,
+	} = useContext(StateContext);
 
 	const getNavbarClass = () => {
 		if (windowIsHorizontal) {
 			return styles.Navbar;
 		} else {
-			if (isExpanded) {
-				return styles.NavbarVertical__Expanded;
+			if (navbarIsExpanded) {
+				return styles.Drawer__Expanded;
 			} else {
-				return styles.NavbarVertical;
+				return styles.Drawer;
 			}
 		}
 	};
 
 	return (
-		<div className={styles.NavbarWrapper}>
+		<>
 			{!windowIsHorizontal && (
-				<FontAwesomeIcon
-					icon={faBars}
-					onClick={() => {
-						setIsExpanded(!isExpanded);
-					}}
-					className={styles.MenuIcon}
-				/>
+				<div className={styles.NavbarVertical}>
+					<FontAwesomeIcon
+						icon={faBars}
+						onClick={() => {
+							setNavbarIsExpanded(!navbarIsExpanded);
+						}}
+						className={styles.NavbarVertical_MenuIcon}
+					/>
+					<h2 className={styles.NavbarVertical_PageTitle}>
+						{activePage}
+					</h2>
+				</div>
 			)}
 			<div className={getNavbarClass()}>
-				<NavbarItem
-					name="Home"
-					windowIsHorizontal={windowIsHorizontal}
-				/>
-				<NavbarItem
-					name="Skills / Projects"
-					windowIsHorizontal={windowIsHorizontal}
-				/>
-				<NavbarItem
-					name="About / Contact"
-					windowIsHorizontal={windowIsHorizontal}
-				/>
+				<NavbarItem pageName="Home" />
+				<NavbarItem pageName="Skills" />
+				<NavbarItem pageName="About Me" />
 			</div>
-		</div>
+		</>
 	);
 };
 

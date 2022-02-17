@@ -2,11 +2,11 @@
 @import "./../../styles/partials/mixins";
 
 .CardTitle {
-    @extend %templateCard;
-    @extend %centerFlex;
-    grid-area: title;
-    &_Title {
-        margin: 0;
-        font-weight: lighter;
-    }
+	@extend %templateCard;
+	@extend %centerFlex;
+	grid-area: title;
+	&_Title {
+		margin: 10px;
+		font-weight: lighter;
+	}
 }

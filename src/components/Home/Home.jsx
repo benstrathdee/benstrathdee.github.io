@@ -3,8 +3,8 @@ import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./Home.module.scss";
 
 const Home = () => {
-	const { show } = useContext(StateContext);
-	const homeClass = show ? styles.Home : styles.Home__Invis;
+	const { showPage } = useContext(StateContext);
+	const homeClass = showPage ? styles.Home : styles.Home__Invis;
 
 	return (
 		<div className={homeClass}>

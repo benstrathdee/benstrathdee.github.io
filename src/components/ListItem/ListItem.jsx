@@ -7,8 +7,8 @@ import { wait } from "@testing-library/user-event/dist/utils";
 const ListItem = ({ item, selectable }) => {
 	const {
 		setShowContent,
-		activeItem,
-		setActiveItem,
+		activeContent,
+		setActiveContent,
 		activeListItem,
 		setActiveListItem,
 	} = useContext(StateContext);
@@ -18,16 +18,16 @@ const ListItem = ({ item, selectable }) => {
 
 	const handleClick = async (event) => {
 		const nextItem = event.currentTarget.getAttribute("id");
-		if (selectable && nextItem !== activeItem) {
+		if (selectable && nextItem !== activeContent) {
 			setActiveListItem(nextItem);
 			setShowContent(false);
 			await wait(300);
-			setActiveItem(nextItem);
+			setActiveContent(nextItem);
 			setShowContent(true);
 		}
 	};
 
-	return (
+	return item.title === "About Me" ? null : (
 		<div id={item.id} className={itemClass} onClick={handleClick}>
 			<a
 				href={item.address}

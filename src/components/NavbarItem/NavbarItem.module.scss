@@ -2,9 +2,9 @@
 @import "./../../styles/partials/mixins";
 
 .NavbarItem {
-	@extend %transitionSlow;
-	cursor: pointer;
+	@include transition(0.5s);
 	color: $primary-font-color;
+	cursor: pointer;
 	border-bottom: 2px solid transparent;
 	&:hover {
 		cursor: pointer;
@@ -18,17 +18,18 @@
 }
 
 .NavbarItemVertical {
-	@extend %transitionSlow;
-	cursor: pointer;
+	@include transition(0.5s);
 	color: $primary-font-color;
+	cursor: pointer;
 	border-radius: 4px;
 	text-align: left;
-	padding: 1em;
+	padding: 0.8em;
 	margin: 5px;
-	font-size: 2em;
-	width: 80%;
+	padding-left: 2em;
+	font-size: 1.2em;
+	width: 100%;
 	&:hover {
-		@extend %transitionFast;
+		@include transition(0.3s);
 		@extend .NavbarItemVertical;
 		background-color: $primary-highlight-color;
 	}

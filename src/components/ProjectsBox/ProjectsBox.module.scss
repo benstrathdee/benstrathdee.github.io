@@ -1,9 +1,9 @@
 .ProjectsBox {
-	height: 20vw;
-	width: 70%;
-	position: relative;
+	height: fit-content;
+	width: 100%;
 	margin: auto;
 	padding-bottom: 20px;
 	display: flex;
-	justify-content: space-evenly;
+	flex-wrap: wrap;
+	justify-content: center;
 }

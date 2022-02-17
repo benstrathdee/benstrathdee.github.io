@@ -3,7 +3,8 @@
 
 .Modal {
 	@extend %centerFlex;
-	@extend %transitionFast;
+	@extend %noScrollBar;
+	@include transition(0.3s);
 	background: $secondary-bg-color;
 	z-index: 10;
 	position: fixed;
@@ -12,59 +13,39 @@
 	right: 0;
 	bottom: 0;
 	&_Content {
-		@extend %centerFlex;
 		@extend %border;
+		@extend %noScrollBar;
+		@extend %centerFlexColumn;
 		background-color: $primary-modalbg-color;
 		color: $primary-font-color;
-		pointer-events: auto;
+		overflow: scroll;
 		padding: 20px;
-		display: grid;
-		grid-template-areas: "image header" "image body";
-		width: 40vw;
-		align-items: center;
-		padding: 20px;
+		max-height: 70vh;
+		@include xsmall {
+			width: 90vw;
+		}
+		@include small {
+			width: 80vw;
+		}
+		@include medium {
+			width: 70vw;
+		}
+		@include large {
+			width: 40vw;
+		}
 	}
-	&_Header {
-		height: 100%;
-		grid-area: header;
-		display: flex;
-		justify-content: right;
-		align-items: flex-start;
-	}
-	&_ImageWrapper {
-		@extend %centerFlex;
-		@extend %border;
-		grid-area: image;
+	&_Title {
+		margin: 0;
+		margin-bottom: 20px;
 	}
 	&_Image {
+		@extend %border;
 		max-height: 300px;
 		max-width: 300px;
 	}
-	&_Body {
-		margin-left: 20px;
-		grid-area: body;
-	}
-	&_Button {
-		@extend %transitionFast;
-		color: $primary-font-color;
-		background-color: $secondary-bg-color;
-		border: 0;
-		font-weight: bold;
-		cursor: pointer;
-		&:hover {
-			@extend .Modal_Button;
-			color: $secondary-highlight-color;
-		}
-	}
 	&_LinkIcon {
 		font-size: $secondary-icon-size;
-		color: $primary-font-color;
-		&:active {
-			color: inherit;
-		}
-		&:visited {
-			color: inherit;
-		}
+		@extend %noLinkDeco;
 	}
 	&__Invis {
 		@extend .Modal;
