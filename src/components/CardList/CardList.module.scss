@@ -1,22 +1,20 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
 
-.CardList {
-	@extend %templateCard;
+.List {
+	@extend %cardPartBasics;
 	@extend %noScrollBar;
 	@extend %centerFlexColumn;
 	grid-area: list;
+
 	margin-top: 0;
-	overflow-y: scroll;
 	padding: 5px;
+
+	overflow-y: scroll;
+	list-style: none;
 	&__Small {
-		@extend .CardList;
-		@include xsmall {
-			margin-top: 10px;
-		}
-		@include small {
-			margin-top: 10px;
-		}
+		@extend .List;
+		margin-top: 10px;
 		@include medium {
 			margin-top: 20px;
 		}

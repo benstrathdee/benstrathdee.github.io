@@ -1,29 +1,33 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
 
-.Modal {
+.Wrapper {
+	@include transition(0.3s);
+	@include invisibilityCloak(Wrapper);
+	@extend %pageCentered;
 	@extend %centerFlex;
 	@extend %noScrollBar;
-	@include transition(0.3s);
+
 	background: $secondary-bg-color;
+
 	z-index: 10;
-	position: fixed;
-	left: 0;
 	top: 0;
-	right: 0;
-	bottom: 0;
+}
+
+.Modal {
 	&_Content {
 		@extend %border;
 		@extend %noScrollBar;
 		@extend %centerFlexColumn;
+
 		background-color: $primary-modalbg-color;
 		color: $primary-font-color;
+
 		overflow: scroll;
 		padding: 20px;
 		max-height: 70vh;
-		@include xsmall {
-			width: 90vw;
-		}
+		width: 90vw;
+
 		@include small {
 			width: 80vw;
 		}
@@ -44,11 +48,7 @@
 		max-width: 300px;
 	}
 	&_LinkIcon {
-		font-size: $secondary-icon-size;
 		@extend %noLinkDeco;
-	}
-	&__Invis {
-		@extend .Modal;
-		opacity: 0;
+		font-size: $secondary-icon-size;
 	}
 }

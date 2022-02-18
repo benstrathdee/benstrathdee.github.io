@@ -1,0 +1,66 @@
+@import "./../../styles/partials/variables";
+@import "./../../styles/partials/mixins";
+@use "./../../styles/partials/devices.scss";
+
+.LargeCard {
+	@include transition(0.5s);
+	@include invisibilityCloak(LargeCard);
+	@extend %pageCentered;
+
+	background-color: $primary-bg-color;
+
+	display: grid;
+	grid-template-rows: 1fr 6fr;
+	grid-template-columns: 1fr 3fr;
+	grid-template-areas: "title info" "list info";
+
+	@include large {
+		margin-top: auto;
+		border-radius: 10px;
+		height: 90vh;
+		width: 90vw;
+
+		grid-template-columns: 1fr 5fr;
+	}
+}
+
+.SmallCard {
+	@include transition(0.5s);
+	@include invisibilityCloak(SmallCard);
+	@extend %pageCentered;
+
+	background-color: $primary-bg-color;
+
+	height: 85vh;
+	margin-top: 0;
+
+	display: grid;
+	grid-template-rows: 1fr 6fr;
+	grid-template-columns: 1fr 4fr;
+	grid-template-areas: "list info" "list info";
+
+	@include medium {
+		grid-template-columns: 1fr 5fr;
+	}
+	@include large {
+		margin-top: auto;
+		height: 70%;
+		width: 70vw;
+
+		border-radius: 10px;
+	}
+	@include xxlarge {
+		width: 50vw;
+	}
+}
+
+.VerticalCard {
+	@include transition(0.5s);
+	@include invisibilityCloak(VerticalCard);
+
+	background-color: transparent;
+
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+}

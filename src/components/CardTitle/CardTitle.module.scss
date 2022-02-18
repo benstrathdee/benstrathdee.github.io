@@ -1,12 +1,9 @@
-@import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
 
-.CardTitle {
-	@extend %templateCard;
+.Title {
+	@extend %cardPartBasics;
 	@extend %centerFlex;
+	padding: 10px;
 	grid-area: title;
-	&_Title {
-		margin: 10px;
-		font-weight: lighter;
-	}
+	font-weight: lighter;
 }

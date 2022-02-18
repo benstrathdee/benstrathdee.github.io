@@ -3,16 +3,17 @@
 @use "./../../styles/partials/devices.scss";
 
 .Home {
-	@extend %centerFlex;
 	@include transition(0.3s);
+	@include invisibilityCloak(Home);
+	@extend %centerFlex;
+	@extend %pageCentered;
 	color: $primary-font-color;
 	flex-direction: column;
-	height: 100%;
 	&_Title {
-		margin: 0;
 		text-shadow: 3px 2px 3px $primary-highlight-color,
 			0px 3px 10px $primary-border-color;
 		font-size: 7vh;
+		margin: 0;
 		@include medium {
 			font-size: 9vh;
 		}
@@ -23,9 +24,5 @@
 		@include medium {
 			font-size: 7vh;
 		}
-	}
-	&__Invis {
-		@extend .Home;
-		opacity: 0;
 	}
 }

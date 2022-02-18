@@ -1,4 +1,5 @@
-$xsmax: 479px; //extra small
+$xsmin: 0px; //extra small
+$xsmax: 479px;
 $smmin: 480px; //small
 $mdmin: 768px; //medium
 $lgmin: 1024px; //large
@@ -6,7 +7,7 @@ $xlmin: 1200px; //extra large
 $xxlmin: 1600px; // xx large
 
 @mixin xsmall {
-	@media only screen and (max-width: $xsmax) {
+	@media only screen and (min-width: $xsmin) {
 		@content;
 	}
 }

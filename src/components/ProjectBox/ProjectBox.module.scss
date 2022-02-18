@@ -1,0 +1,15 @@
+@import "./../../styles/partials/mixins";
+
+.Box {
+	@include horizontalRule;
+	@extend %centerFlexColumn;
+	flex-wrap: wrap;
+	&_Title {
+		text-align: center;
+		font-weight: lighter;
+	}
+	&_Projects {
+		@extend %centerFlex;
+		flex-wrap: wrap;
+	}
+}

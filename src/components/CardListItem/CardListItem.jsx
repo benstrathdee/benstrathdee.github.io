@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import styles from "./ListItem.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { StateContext } from "../../context/StateContext/StateContext";
 import { wait } from "@testing-library/user-event/dist/utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./CardListItem.module.scss";
+import { StateContext } from "../../context/StateContext/StateContext";
 
-const ListItem = ({ item, selectable }) => {
+const CardListItem = ({ listItems, item, selectable }) => {
 	const {
 		setShowContent,
 		activeContent,
@@ -14,9 +14,9 @@ const ListItem = ({ item, selectable }) => {
 	} = useContext(StateContext);
 
 	const itemClass =
-		activeListItem === item.id ? styles.ListItem__Active : styles.ListItem;
+		activeListItem === item.id ? styles.Item__Active : styles.Item;
 
-	const handleClick = async (event) => {
+	const changeActive = async (event) => {
 		const nextItem = event.currentTarget.getAttribute("id");
 		if (selectable && nextItem !== activeContent) {
 			setActiveListItem(nextItem);
@@ -27,23 +27,23 @@ const ListItem = ({ item, selectable }) => {
 		}
 	};
 
-	return item.title === "About Me" ? null : (
-		<div id={item.id} className={itemClass} onClick={handleClick}>
+	return !selectable && listItems.indexOf(item) === 0 ? null : (
+		<li id={item.id} className={itemClass} onClick={changeActive}>
 			<a
 				href={item.address}
 				target="_blank"
 				rel="noreferrer"
-				className={styles.ListItem_Link}
+				className={styles.Item_Link}
 			>
-				<div className={styles.ListItem_Icons}>
+				<h6 className={styles.Item_Icons}>
 					{item.icons.map((icon, iconIndex) => {
 						return <FontAwesomeIcon icon={icon} key={iconIndex} />;
 					})}
-				</div>
-				<div className={styles.ListItem_Title}>{item.title}</div>
+				</h6>
+				<h5 className={styles.Item_Title}>{item.title}</h5>
 			</a>
-		</div>
+		</li>
 	);
 };
 
-export default ListItem;
+export default CardListItem;

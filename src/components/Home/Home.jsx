@@ -7,10 +7,10 @@ const Home = () => {
 	const homeClass = showPage ? styles.Home : styles.Home__Invis;
 
 	return (
-		<div className={homeClass}>
+		<home-page class={homeClass}>
 			<h1 className={styles.Home_Title}>BEN STRATHDEE</h1>
 			<h2 className={styles.Home_Subtitle}>Junior Software Developer</h2>
-		</div>
+		</home-page>
 	);
 };
 

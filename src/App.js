@@ -1,16 +1,17 @@
 import styles from "./App.module.scss";
-import { StateProvider } from "./context/StateContext/StateContext";
 import Navbar from "./components/Navbar";
-import DisplayWindow from "./components/DisplayWindow";
+import ContentBody from "./components/ContentBody";
+import { StateProvider } from "./context/StateContext/StateContext";
+import "./utils/CustomElements";
 
 function App() {
 	return (
-		<div className={styles.App}>
+		<app-body class={styles.App}>
 			<StateProvider>
 				<Navbar />
-				<DisplayWindow />
+				<ContentBody />
 			</StateProvider>
-		</div>
+		</app-body>
 	);
 }
 

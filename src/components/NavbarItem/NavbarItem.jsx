@@ -1,7 +1,7 @@
+import { useContext } from "react";
 import { wait } from "@testing-library/user-event/dist/utils";
-import React, { useContext } from "react";
-import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./NavbarItem.module.scss";
+import { StateContext } from "../../context/StateContext/StateContext";
 
 const NavbarItem = ({ pageName }) => {
 	const {
@@ -17,18 +17,13 @@ const NavbarItem = ({ pageName }) => {
 
 	const getItemClass = () => {
 		if (!windowIsHorizontal) {
-			if (activeNavbarItem === pageName) {
-				return styles.NavbarItemVertical__Current;
-			} else {
-				return styles.NavbarItemVertical;
-			}
-		} else {
-			if (activeNavbarItem === pageName) {
-				return styles.NavbarItem__Current;
-			} else {
-				return styles.NavbarItem;
-			}
+			return activeNavbarItem === pageName
+				? styles.DrawerItem__Current
+				: styles.DrawerItem;
 		}
+		return activeNavbarItem === pageName
+			? styles.NavbarItem__Current
+			: styles.NavbarItem;
 	};
 
 	const changePage = async (pageName) => {
@@ -48,9 +43,9 @@ const NavbarItem = ({ pageName }) => {
 	};
 
 	return (
-		<div className={getItemClass()} onClick={() => changePage(pageName)}>
+		<li className={getItemClass()} onClick={() => changePage(pageName)}>
 			{pageName}
-		</div>
+		</li>
 	);
 };
 

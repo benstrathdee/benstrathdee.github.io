@@ -1,9 +1,46 @@
-@use "./../../styles/partials/devices.scss";
+@use "./devices.scss";
+@import "./variables";
 
+// Common transition effects
+@mixin transition($time) {
+	transition: opacity $time, color $time, background-color $time, top $time,
+		border $time, text-shadow $time, transform $time;
+	-webkit-transition: opacity $time, color $time, background-color $time,
+		top $time, border $time, text-shadow $time, transform $time;
+}
+
+// All these dimensions need to always be the same
+@mixin cardDimensions($value) {
+	height: $value;
+	width: $value;
+}
+
+// Common rule used for fading in/out- adds &__Invis to a class
+@mixin invisibilityCloak($parent) {
+	&__Invis {
+		@extend .#{$parent};
+		opacity: 0;
+	}
+}
+
+// Common hr styling
+@mixin horizontalRule {
+	&_Break {
+		border: 1px solid $primary-border-color;
+		clear: both;
+
+		margin: 10px;
+		height: 0;
+		width: 98%;
+	}
+}
+
+// Common border rules
 %border {
 	border: 2px solid $primary-border-color;
 }
 
+// Removes scrollbar on scrollable containers
 %noScrollBar {
 	&::-webkit-scrollbar {
 		display: none;
@@ -12,6 +49,7 @@
 	scrollbar-width: none; /* Firefox */
 }
 
+// All links have same appearance site-wide
 %noLinkDeco {
 	color: $primary-font-color;
 	text-decoration: none;
@@ -23,50 +61,50 @@
 	}
 }
 
-%horizontalRule {
-	border: 1px solid $primary-border-color;
-	margin: 0;
-	margin-bottom: 10px;
-	clear: both;
-	height: 0;
-	width: 98%;
-}
-
-%templateCard {
+// Basic rules shared by card parts
+%cardPartBasics {
+	@extend %border;
 	color: $primary-font-color;
 	background-color: $secondary-bg-color;
-	@include xsmall {
-		margin: 10px;
-	}
-	@include small {
-		margin: 10px;
-	}
-	@include medium {
+	margin: 10px;
+	@include large {
 		margin: 20px;
 	}
-	@extend %border;
 }
 
+// Centers element in the middle of the content body, accounts for navbar
+%pageCentered {
+	position: fixed;
+	top: $nav-height;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+// Common flex rules
 %centerFlex {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+// Common flex column rules
 %centerFlexColumn {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-@mixin transition($time) {
-	transition: opacity $time, color $time, background-color $time, top $time,
-		border $time, text-shadow $time;
-	-webkit-transition: opacity $time, color $time, background-color $time,
-		top $time, border $time, text-shadow $time;
-}
-
-@mixin cardDimensions($value) {
-	height: $value;
-	width: $value;
+// These values always need to match
+%projectCardSizes {
+	@include xsmall {
+		@include cardDimensions($projectcard-smallValue);
+	}
+	@include medium {
+		@include cardDimensions($projectcard-medValue);
+	}
+	@include large {
+		@include cardDimensions($projectcard-largeValue);
+	}
 }

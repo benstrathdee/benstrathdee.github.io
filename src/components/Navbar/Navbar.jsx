@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import NavbarItem from "../NavbarItem/NavbarItem";
+import { useContext } from "react";
 import styles from "./Navbar.module.scss";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NavbarItem from "../NavbarItem/NavbarItem";
 import { StateContext } from "../../context/StateContext/StateContext";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Navbar = () => {
 	const {
@@ -14,38 +14,49 @@ const Navbar = () => {
 	} = useContext(StateContext);
 
 	const getNavbarClass = () => {
-		if (windowIsHorizontal) {
-			return styles.Navbar;
-		} else {
-			if (navbarIsExpanded) {
-				return styles.Drawer__Expanded;
-			} else {
-				return styles.Drawer;
-			}
-		}
+		if (windowIsHorizontal) return styles.Navbar;
+		return navbarIsExpanded ? styles.Drawer__Expanded : styles.Drawer;
 	};
+
+	const menuIconClass = navbarIsExpanded
+		? styles.NavbarVertical_MenuIcon__Expanded
+		: styles.NavbarVertical_MenuIcon;
 
 	return (
 		<>
 			{!windowIsHorizontal && (
-				<div className={styles.NavbarVertical}>
-					<FontAwesomeIcon
-						icon={faBars}
-						onClick={() => {
-							setNavbarIsExpanded(!navbarIsExpanded);
-						}}
-						className={styles.NavbarVertical_MenuIcon}
-					/>
-					<h2 className={styles.NavbarVertical_PageTitle}>
-						{activePage}
-					</h2>
-				</div>
+				<>
+					<nav className={styles.NavbarVertical}>
+						<FontAwesomeIcon
+							icon={faChevronDown}
+							onClick={() => {
+								setNavbarIsExpanded(!navbarIsExpanded);
+							}}
+							className={menuIconClass}
+						/>
+						<h2 className={styles.NavbarVertical_PageTitle}>
+							{activePage}
+						</h2>
+					</nav>
+				</>
 			)}
-			<div className={getNavbarClass()}>
-				<NavbarItem pageName="Home" />
-				<NavbarItem pageName="Skills" />
-				<NavbarItem pageName="About Me" />
-			</div>
+			{windowIsHorizontal ? (
+				<nav>
+					<ul className={getNavbarClass()}>
+						<NavbarItem pageName="Home" />
+						<NavbarItem pageName="Skills" />
+						<NavbarItem pageName="About Me" />
+					</ul>
+				</nav>
+			) : (
+				<nav-drawer>
+					<ul className={getNavbarClass()}>
+						<NavbarItem pageName="Home" />
+						<NavbarItem pageName="Skills" />
+						<NavbarItem pageName="About Me" />
+					</ul>
+				</nav-drawer>
+			)}
 		</>
 	);
 };

@@ -1,27 +1,31 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./CardList.module.scss";
-import ListItem from "../ListItem";
+import CardListItem from "../CardListItem";
 import { StateContext } from "../../context/StateContext/StateContext";
 
 const CardList = ({ listItems, selectable, size }) => {
 	const { setActiveListItem, windowIsHorizontal, showPage } =
 		useContext(StateContext);
 
-	const listClass =
-		size === "small" ? styles.CardList__Small : styles.CardList;
+	const listClass = size === "small" ? styles.List__Small : styles.List;
 
 	useEffect(() => {
 		setActiveListItem("item1");
 	}, [showPage]);
 
 	return !windowIsHorizontal ? null : (
-		<div className={listClass}>
+		<card-list class={listClass}>
 			{listItems.map((item, index) => {
 				return (
-					<ListItem key={index} item={item} selectable={selectable} />
+					<CardListItem
+						key={index}
+						listItems={listItems}
+						item={item}
+						selectable={selectable}
+					/>
 				);
 			})}
-		</div>
+		</card-list>
 	);
 };
 

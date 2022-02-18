@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./ProjectCard.module.scss";
+import { StateContext } from "../../context/StateContext/StateContext";
 
 const ProjectCard = ({ project }) => {
 	const { setShowModal, setModalContent } = useContext(StateContext);
@@ -11,18 +11,14 @@ const ProjectCard = ({ project }) => {
 	};
 
 	return (
-		<div className={styles.ProjectCard}>
-			<div className={styles.ImageWrapper}>
-				<img
-					src={project.projectImage}
-					alt="Relevant project"
-					className={styles.ImageWrapper_Image}
-				/>
-			</div>
-			<div className={styles.InfoWrapper} onClick={handleModal}>
-				<h5 className={styles.InfoWrapper_Content}>{project.name}</h5>
-			</div>
-		</div>
+		<project-card class={styles.Project} onClick={handleModal}>
+			<img
+				src={project.projectImage}
+				alt="Relevant project"
+				className={styles.Project_Image}
+			/>
+			<h5 className={styles.Project_Content}>{project.name}</h5>
+		</project-card>
 	);
 };
 

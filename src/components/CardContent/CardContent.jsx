@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./CardContent.module.scss";
+import ProjectBox from "./../ProjectBox";
 import { StateContext } from "../../context/StateContext/StateContext";
-import ProjectsBox from "../ProjectsBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CardContent = ({ content, linkBox }) => {
@@ -10,11 +10,9 @@ const CardContent = ({ content, linkBox }) => {
 
 	const getContentClass = () => {
 		if (windowIsHorizontal) {
-			return showContent ? styles.ContentCard : styles.ContentCard__Invis;
+			return showContent ? styles.Horizontal : styles.Horizontal__Invis;
 		}
-		return showContent
-			? styles.ContentCardVertical
-			: styles.ContentCardVertical__Invis;
+		return showContent ? styles.Vertical : styles.Vertical__Invis;
 	};
 
 	const activeItem = content.filter((item) => item.id === activeContent)[0];
@@ -24,113 +22,70 @@ const CardContent = ({ content, linkBox }) => {
 	}, [setShowContent]);
 
 	return windowIsHorizontal ? (
-		<div className={getContentClass()}>
-			<h3 className={styles.ContentCard_Title}>{activeItem.title}</h3>
-			<hr className={styles.ContentCard_HorizontalRule} />
+		<card-content class={getContentClass()}>
+			<h3 className={styles.Horizontal_Title}>{activeItem.title}</h3>
+			<hr className={styles.Horizontal_Break} />
 			{activeItem.content.map((text, index) => {
 				return (
-					<p className={styles.ContentCard_Content} key={index}>
+					<p className={styles.Horizontal_Content} key={index}>
 						{text}
 					</p>
 				);
 			})}
 			{activeItem.projects.length > 0 && (
-				<>
-					<hr className={styles.ContentCard_HorizontalRule} />
-					<h3 className={styles.ContentCard_Title}>
-						Related Projects
-					</h3>
-					<ProjectsBox parent={activeItem} />
-				</>
+				<ProjectBox parent={activeItem} />
 			)}
-		</div>
+		</card-content>
 	) : (
-		<>
-			<div className={styles.VerticalSpacer}></div>
-			{content.map((item, index) => {
-				return (
-					item.content.length > 0 && (
-						<div className={getContentClass()} key={index}>
-							<h3 className={styles.ContentCardVertical_Title}>
-								{item.title}
-							</h3>
-							<h4 className={styles.ContentCardVertical_Icons}>
-								{item.icons.map((icon, index) => {
-									return (
-										<FontAwesomeIcon
-											icon={icon}
-											key={index}
-										/>
-									);
-								})}
-							</h4>
-
-							<hr
-								className={
-									styles.ContentCardVertical_HorizontalRule
-								}
-							/>
-							{item.content.map((text, index) => {
+		content.map((item, index) => {
+			return (
+				item.content.length > 0 && (
+					<card-content class={getContentClass()} key={index}>
+						<h3 className={styles.Vertical_Title}>{item.title}</h3>
+						<h4 className={styles.Vertical_Icons}>
+							{item.icons.map((icon, index) => {
 								return (
-									<p
-										className={
-											styles.ContentCardVertical_Content
-										}
-										key={index}
-									>
-										{text}
-									</p>
+									<FontAwesomeIcon icon={icon} key={index} />
 								);
 							})}
-							{linkBox && (
-								<div
-									className={
-										styles.ContentCardVertical_LinksBox
-									}
+						</h4>
+						<hr className={styles.Vertical_Break} />
+						{item.content.map((text, index) => {
+							return (
+								<p
+									className={styles.Vertical_Content}
+									key={index}
 								>
-									{content.map((item, index) => {
-										if (item.address !== undefined) {
-											return (
-												<a
-													href={item.address}
-													target="_blank"
-													rel="noreferrer"
-													key={index}
-												>
-													<FontAwesomeIcon
-														icon={item.icons[0]}
-														className={
-															styles.ContentCardVertical_Link
-														}
-													/>
-												</a>
-											);
-										}
-									})}
-								</div>
-							)}
-							{item.projects.length > 0 && (
-								<>
-									<hr
-										className={
-											styles.ContentCardVertical_HorizontalRule
-										}
-									/>
-									<h3
-										className={
-											styles.ContentCardVertical_Title
-										}
-									>
-										Related Projects
-									</h3>
-									<ProjectsBox parent={item} />
-								</>
-							)}
-						</div>
-					)
-				);
-			})}
-		</>
+									{text}
+								</p>
+							);
+						})}
+						{linkBox && (
+							<span className={styles.Vertical_LinksBox}>
+								{content.map((item, index) => {
+									return item.address === undefined ? null : (
+										<a
+											href={item.address}
+											target="_blank"
+											rel="noreferrer"
+											key={index}
+										>
+											<FontAwesomeIcon
+												icon={item.icons[0]}
+												className={styles.Vertical_Link}
+											/>
+										</a>
+									);
+								})}
+							</span>
+						)}
+						{item.projects.length > 0 && (
+							<ProjectBox parent={item} />
+						)}
+					</card-content>
+				)
+			);
+		})
 	);
 };
 

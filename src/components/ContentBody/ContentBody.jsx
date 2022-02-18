@@ -1,21 +1,20 @@
-import React, { useContext } from "react";
-import { StateContext } from "../../context/StateContext/StateContext";
+import React, { useContext, useEffect } from "react";
 import { wait } from "@testing-library/user-event/dist/utils";
-import { useEffect } from "react";
-import styles from "./DisplayWindow.module.scss";
+import styles from "./ContentBody.module.scss";
 import Home from "../Home";
-import CardWrapper from "../CardWrapper";
+import ContentCard from "../ContentCard";
 import Modal from "../Modal/Modal";
 import { skillsList } from "../../content/SkillsContent";
 import { aboutList } from "../../content/AboutContent";
+import { StateContext } from "../../context/StateContext/StateContext";
 
-const DisplayWindow = () => {
+const ContentBody = () => {
 	const { activePage, showPage, setShowPage, windowIsHorizontal } =
 		useContext(StateContext);
 
 	const windowClass = windowIsHorizontal
-		? styles.DisplayWindow
-		: styles.DisplayWindow__Vertical;
+		? styles.ContentBody
+		: styles.ContentBody__Vertical;
 
 	const getPage = () => {
 		switch (activePage) {
@@ -23,7 +22,7 @@ const DisplayWindow = () => {
 				return <Home />;
 			case "Skills":
 				return (
-					<CardWrapper
+					<ContentCard
 						title="My Skills"
 						listItems={skillsList}
 						selectable={true}
@@ -34,7 +33,7 @@ const DisplayWindow = () => {
 				);
 			case "About Me":
 				return (
-					<CardWrapper
+					<ContentCard
 						title="My Links"
 						listItems={aboutList}
 						selectable={false}
@@ -60,11 +59,11 @@ const DisplayWindow = () => {
 	}, []);
 
 	return (
-		<div className={windowClass}>
+		<content-body class={windowClass}>
 			{getPage()}
 			<Modal />
-		</div>
+		</content-body>
 	);
 };
 
-export default DisplayWindow;
+export default ContentBody;

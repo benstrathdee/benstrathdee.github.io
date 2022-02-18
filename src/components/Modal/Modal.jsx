@@ -1,44 +1,40 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useEffect, useState } from "react";
-import { StateContext } from "../../context/StateContext/StateContext";
-import styles from "./Modal.module.scss";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { wait } from "@testing-library/user-event/dist/utils";
+import styles from "./Modal.module.scss";
+import { StateContext } from "../../context/StateContext/StateContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Modal = () => {
 	const { showModal, setShowModal, modalContent } = useContext(StateContext);
-	const [visible, setVisible] = useState(false);
+	const [modalVisible, setModalVisible] = useState(false);
 
-	const modalClass = visible ? styles.Modal : styles.Modal__Invis;
+	const modalClass = modalVisible ? styles.Wrapper : styles.Wrapper__Invis;
 
 	const close = async (e) => {
-		if (e.key === "Escape") {
-			closeModal();
-		}
+		if (e.key === "Escape") closeModal();
 	};
 
 	window.addEventListener("keydown", close);
 
-	useEffect(() => {
-		if (showModal) {
-			openModal();
-		}
-	}, [showModal]);
-
 	const openModal = () => {
-		setVisible(true);
+		setModalVisible(true);
 	};
 
 	const closeModal = async () => {
-		setVisible(false);
+		setModalVisible(false);
 		await wait(300);
 		setShowModal(false);
 	};
 
+	useEffect(() => {
+		if (showModal) openModal();
+	}, [showModal]);
+
 	return !showModal ? null : (
-		<div className={modalClass} onClick={closeModal}>
-			<div
-				className={styles.Modal_Content}
+		<modal-wrapper class={modalClass} onClick={closeModal}>
+			<modal-box
+				class={styles.Modal_Content}
 				onClick={(e) => e.stopPropagation()}
 			>
 				<h4 className={styles.Modal_Title}>{modalContent.name}</h4>
@@ -54,8 +50,8 @@ const Modal = () => {
 						className={styles.Modal_LinkIcon}
 					/>
 				</a>
-			</div>
-		</div>
+			</modal-box>
+		</modal-wrapper>
 	);
 };
 
