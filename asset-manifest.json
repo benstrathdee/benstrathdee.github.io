@@ -1,20 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.3a0baf6a.css",
-    "main.js": "/static/js/main.86665af9.js",
-    "static/js/787.8d4efb73.chunk.js": "/static/js/787.8d4efb73.chunk.js",
+    "main.css": "/static/css/main.db5ecacf.css",
+    "main.js": "/static/js/main.316c5b10.js",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "static/media/old_portfolio.jpg": "/static/media/old_portfolio.37b4df74ca5193a6e510.jpg",
     "static/media/background.jpg": "/static/media/background.791431fdf6427124e113.jpg",
     "static/media/html_calculator.png": "/static/media/html_calculator.5f1681aaf7e16c6ff9db.png",
     "static/media/morse_code.png": "/static/media/morse_code.096764025474bf084313.png",
     "index.html": "/index.html",
-    "main.3a0baf6a.css.map": "/static/css/main.3a0baf6a.css.map",
-    "main.86665af9.js.map": "/static/js/main.86665af9.js.map",
-    "787.8d4efb73.chunk.js.map": "/static/js/787.8d4efb73.chunk.js.map"
+    "main.db5ecacf.css.map": "/static/css/main.db5ecacf.css.map",
+    "main.316c5b10.js.map": "/static/js/main.316c5b10.js.map"
   },
   "entrypoints": [
-    "static/css/main.3a0baf6a.css",
-    "static/js/main.86665af9.js"
+    "static/css/main.db5ecacf.css",
+    "static/js/main.316c5b10.js"
   ]
 }
