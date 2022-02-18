@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.16072fd5.css",
-    "main.js": "/static/js/main.57468bcf.js",
+    "main.css": "/static/css/main.3a0baf6a.css",
+    "main.js": "/static/js/main.86665af9.js",
     "static/js/787.8d4efb73.chunk.js": "/static/js/787.8d4efb73.chunk.js",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "static/media/old_portfolio.jpg": "/static/media/old_portfolio.37b4df74ca5193a6e510.jpg",
@@ -9,12 +9,12 @@
     "static/media/html_calculator.png": "/static/media/html_calculator.5f1681aaf7e16c6ff9db.png",
     "static/media/morse_code.png": "/static/media/morse_code.096764025474bf084313.png",
     "index.html": "/index.html",
-    "main.16072fd5.css.map": "/static/css/main.16072fd5.css.map",
-    "main.57468bcf.js.map": "/static/js/main.57468bcf.js.map",
+    "main.3a0baf6a.css.map": "/static/css/main.3a0baf6a.css.map",
+    "main.86665af9.js.map": "/static/js/main.86665af9.js.map",
     "787.8d4efb73.chunk.js.map": "/static/js/787.8d4efb73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16072fd5.css",
-    "static/js/main.57468bcf.js"
+    "static/css/main.3a0baf6a.css",
+    "static/js/main.86665af9.js"
   ]
 }
