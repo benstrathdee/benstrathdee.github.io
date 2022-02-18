@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { wait } from "@testing-library/user-event/dist/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./CardListItem.module.scss";

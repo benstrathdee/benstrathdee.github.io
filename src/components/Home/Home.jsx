@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { StateContext } from "../../context/StateContext/StateContext";
 import styles from "./Home.module.scss";
 

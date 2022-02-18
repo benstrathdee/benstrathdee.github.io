@@ -26,7 +26,7 @@ const NavbarItem = ({ pageName }) => {
 			: styles.NavbarItem;
 	};
 
-	const changePage = async (pageName) => {
+	const changePage = async () => {
 		if (activePage !== pageName) {
 			setActiveNavbarItem(pageName);
 			if (navbarIsExpanded) {
@@ -43,7 +43,7 @@ const NavbarItem = ({ pageName }) => {
 	};
 
 	return (
-		<li className={getItemClass()} onClick={() => changePage(pageName)}>
+		<li className={getItemClass()} onClick={changePage}>
 			{pageName}
 		</li>
 	);

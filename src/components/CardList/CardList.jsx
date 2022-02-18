@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./CardList.module.scss";
 import CardListItem from "../CardListItem";
 import { StateContext } from "../../context/StateContext/StateContext";

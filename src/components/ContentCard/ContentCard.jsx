@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { wait } from "@testing-library/user-event/dist/utils";
 import styles from "./ContentCard.module.scss";
 import CardTitle from "../CardTitle";
