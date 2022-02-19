@@ -38,9 +38,7 @@ const Navbar = () => {
 								className={menuIconClass}
 							/>
 						</button>
-						<h2 className={styles.Vertical_PageTitle}>
-							{activePage}
-						</h2>
+						<h2 className={styles.Vertical_Title}>{activePage}</h2>
 					</nav>
 				</>
 			)}
