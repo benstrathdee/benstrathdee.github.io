@@ -9,8 +9,14 @@ import { aboutList } from "../../content/AboutContent";
 import { StateContext } from "../../context/StateContext/StateContext";
 
 const ContentBody = () => {
-	const { activePage, showPage, setShowPage, windowIsHorizontal } =
-		useContext(StateContext);
+	const {
+		activePage,
+		showPage,
+		setShowPage,
+		windowIsHorizontal,
+		navbarIsExpanded,
+		setNavbarIsExpanded,
+	} = useContext(StateContext);
 
 	const windowClass = windowIsHorizontal
 		? styles.ContentBody
@@ -47,6 +53,10 @@ const ContentBody = () => {
 		}
 	};
 
+	const handleClick = () => {
+		if (navbarIsExpanded) setNavbarIsExpanded(false);
+	};
+
 	const doShowPage = async () => {
 		if (showPage === false) {
 			await wait(500);
@@ -59,7 +69,11 @@ const ContentBody = () => {
 	}, []);
 
 	return (
-		<content-body class={windowClass}>
+		<content-body
+			class={windowClass}
+			onClick={handleClick}
+			onmousedown={handleClick}
+		>
 			{getPage()}
 			<Modal />
 		</content-body>
