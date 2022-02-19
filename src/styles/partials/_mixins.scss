@@ -58,6 +58,14 @@
 	border: 2px solid $primary-border-color;
 }
 
+// Button styling reset
+%buttonReset {
+	border: none;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+
 // Pointer rules that also disable highlight on tap/click that occurs in some conditions
 %noHighlightPointer {
 	cursor: pointer;

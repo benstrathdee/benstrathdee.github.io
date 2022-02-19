@@ -50,12 +50,7 @@
 	&_Close {
 		@include linkIcon(Modal_Close, red, 0.3s);
 		@extend %noHighlightPointer;
-
-		background: transparent;
-
-		border: none;
-		margin: 0;
-		padding: 0;
+		@extend %buttonReset;
 	}
 	&_Title {
 		margin: 0;

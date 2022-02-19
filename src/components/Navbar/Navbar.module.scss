@@ -30,20 +30,28 @@
 	position: fixed;
 	z-index: 20;
 
-	&_MenuIcon {
-		@include transition(0.3s);
+	&_Button {
 		@extend %noHighlightPointer;
+		@extend %buttonReset;
+
+		left: $vertnav-height / 4;
+		top: $vertnav-height / 4;
+		z-index: 25;
+		position: fixed;
+	}
+	&_Icon {
+		@include transition(0.3s);
+		@include linkIcon(
+			NavbarVertical_Icon,
+			$secondary-highlight-color,
+			0.3s
+		);
 
 		color: $primary-font-color;
 		font-size: $primary-icon-size;
 
-		left: $vertnav-height / 3;
-		top: $vertnav-height / 3;
-		z-index: 25;
-		position: fixed;
-
 		&__Expanded {
-			@extend .NavbarVertical_MenuIcon;
+			@extend .NavbarVertical_Icon;
 			transform: scaleY(-1); // Wanna see me do a flip?
 			-webkit-transform: scaleY(-1);
 		}

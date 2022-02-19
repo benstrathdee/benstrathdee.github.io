@@ -19,21 +19,25 @@ const Navbar = () => {
 	};
 
 	const menuIconClass = navbarIsExpanded
-		? styles.NavbarVertical_MenuIcon__Expanded
-		: styles.NavbarVertical_MenuIcon;
+		? styles.NavbarVertical_Icon__Expanded
+		: styles.NavbarVertical_Icon;
 
 	return (
 		<>
 			{!windowIsHorizontal && (
 				<>
 					<nav className={styles.NavbarVertical}>
-						<FontAwesomeIcon
-							icon={faChevronDown}
+						<button
 							onClick={() => {
 								setNavbarIsExpanded(!navbarIsExpanded);
 							}}
-							className={menuIconClass}
-						/>
+							className={styles.NavbarVertical_Button}
+						>
+							<FontAwesomeIcon
+								icon={faChevronDown}
+								className={menuIconClass}
+							/>
+						</button>
 						<h2 className={styles.NavbarVertical_PageTitle}>
 							{activePage}
 						</h2>
