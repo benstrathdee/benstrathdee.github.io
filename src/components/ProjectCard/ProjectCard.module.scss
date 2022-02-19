@@ -5,11 +5,11 @@
 .Project {
 	@extend %border;
 	@extend %projectCardSizes;
+	@extend %noHighlightPointer;
 
 	position: relative;
 	margin: 10px;
 
-	cursor: pointer;
 	&_Image {
 		@extend %projectCardSizes;
 		object-fit: scale-down;

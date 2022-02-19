@@ -32,6 +32,7 @@
 
 	&_MenuIcon {
 		@include transition(0.3s);
+		@extend %noHighlightPointer;
 
 		color: $primary-font-color;
 		font-size: $primary-icon-size;
@@ -41,7 +42,6 @@
 		z-index: 25;
 		position: fixed;
 
-		cursor: pointer;
 		&__Expanded {
 			@extend .NavbarVertical_MenuIcon;
 			transform: scaleY(-1); // Wanna see me do a flip?

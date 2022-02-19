@@ -3,6 +3,7 @@
 
 .Item {
 	@include transition(0.3s);
+	@extend %noHighlightPointer;
 
 	color: $primary-font-color;
 
@@ -12,7 +13,6 @@
 	margin: 5px;
 	border-radius: 2px;
 
-	cursor: pointer;
 	&_Icons {
 		font-size: $primary-icon-size;
 		display: flex;

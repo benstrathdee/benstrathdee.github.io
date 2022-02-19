@@ -40,6 +40,18 @@
 	border: 2px solid $primary-border-color;
 }
 
+// Pointer rules that also disable highlight on tap/click that occurs in some conditions
+%noHighlightPointer {
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); // backup value because
+	-webkit-tap-highlight-color: transparent; // sometimes the transparent keyword might not work,
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 // Removes scrollbar on scrollable containers
 %noScrollBar {
 	&::-webkit-scrollbar {
