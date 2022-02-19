@@ -1,5 +1,6 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
+@use "styles/partials/devices.scss";
 
 .List {
 	@extend %cardPartBasics;
@@ -15,7 +16,7 @@
 	&__Small {
 		@extend .List;
 		margin-top: 10px;
-		@include medium {
+		@include large {
 			margin-top: 20px;
 		}
 	}
