@@ -15,6 +15,7 @@
 }
 
 .Modal {
+	overscroll-behavior: contain;
 	&_Content {
 		@extend %border;
 		@extend %noScrollBar;
