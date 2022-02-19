@@ -30,7 +30,6 @@
 .Vertical {
 	@include transition(0.3s);
 	@include invisibilityCloak(Vertical);
-	@include linkIcon(Vertical, 0.3s);
 	@include horizontalRule;
 	@extend %cardPartBasics;
 	@extend %noScrollBar;
@@ -70,5 +69,8 @@
 	&_LinksBox {
 		display: flex;
 		justify-content: space-around;
+	}
+	&_LinkIcon {
+		@include linkIcon(Vertical_LinkIcon, $secondary-highlight-color, 0.3s);
 	}
 }
