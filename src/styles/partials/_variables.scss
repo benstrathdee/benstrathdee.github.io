@@ -13,7 +13,7 @@ $base-bg-color: rgba(0, 0, 0, 0.2);
 $primary-modalbg-color: rgba(0, 0, 0, 0.9);
 
 $primary-highlight-color: rgba(184, 190, 191, 0.2);
-$secondary-highlight-color: red;
+$secondary-highlight-color: rgb(201, 114, 114);
 
 $primary-border-color: gray;
 
@@ -30,3 +30,4 @@ $projectcard-largeValue: 15rem;
 // FONT SIZES
 $primary-icon-size: 1.5rem;
 $secondary-icon-size: 1rem;
+$link-icon-size: $primary-icon-size * 1.5;

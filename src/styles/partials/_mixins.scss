@@ -23,6 +23,26 @@
 	}
 }
 
+// Appearance rules for icon based links- apply to fontawesomeicon component
+@mixin linkIcon($parent, $time) {
+	&_LinkIcon {
+		@include transition($time);
+		@extend %noLinkDeco;
+		font-size: $link-icon-size;
+		margin: 5px;
+		@include medium {
+			font-size: $primary-icon-size;
+		}
+		&:hover {
+			@include transition($time);
+			color: $secondary-highlight-color;
+		}
+		&:active {
+			@extend .#{$parent}_LinkIcon:hover;
+		}
+	}
+}
+
 // Common hr styling
 @mixin horizontalRule {
 	&_Break {

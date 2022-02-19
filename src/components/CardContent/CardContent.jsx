@@ -72,7 +72,9 @@ const CardContent = ({ content, linkBox }) => {
 										>
 											<FontAwesomeIcon
 												icon={item.icons[0]}
-												className={styles.Vertical_Link}
+												className={
+													styles.Vertical_LinkIcon
+												}
 											/>
 										</a>
 									);

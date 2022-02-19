@@ -15,6 +15,7 @@
 }
 
 .Modal {
+	@include linkIcon(Modal, 0.3s);
 	&_Content {
 		@extend %border;
 		@extend %noScrollBar;
@@ -46,9 +47,5 @@
 		@extend %border;
 		max-height: 300px;
 		max-width: 300px;
-	}
-	&_LinkIcon {
-		@extend %noLinkDeco;
-		font-size: $secondary-icon-size;
 	}
 }
