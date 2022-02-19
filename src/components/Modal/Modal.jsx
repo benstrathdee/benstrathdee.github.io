@@ -37,19 +37,28 @@ const Modal = () => {
 				class={styles.Modal_Content}
 				onClick={(e) => e.stopPropagation()}
 			>
-				<h4 className={styles.Modal_Title}>{modalContent.name}</h4>
+				<modal-header class={styles.Modal_Header}>
+					<a
+						href={modalContent.link}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<FontAwesomeIcon
+							icon={faGithub}
+							className={styles.Modal_Link}
+						/>
+					</a>
+					<h4 className={styles.Modal_Title}>{modalContent.name}</h4>
+					<button className={styles.Modal_Close} onClick={closeModal}>
+						✖
+					</button>
+				</modal-header>
 				<img
 					src={modalContent.projectImage}
 					alt="Project Preview"
 					className={styles.Modal_Image}
 				/>
 				<p>{modalContent.description}</p>
-				<a href={modalContent.link} target="_blank" rel="noreferrer">
-					<FontAwesomeIcon
-						icon={faGithub}
-						className={styles.Modal_LinkIcon}
-					/>
-				</a>
 			</modal-box>
 		</modal-wrapper>
 	);

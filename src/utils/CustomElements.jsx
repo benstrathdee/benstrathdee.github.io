@@ -15,6 +15,9 @@ customElements.define("modal-wrapper", ModalWrapper, { extends: "div" });
 class ModalBox extends HTMLElement {}
 customElements.define("modal-box", ModalBox, { extends: "div" });
 
+class ModalHeader extends HTMLElement {}
+customElements.define("modal-header", ModalHeader, { extends: "div" });
+
 class ContentBody extends HTMLElement {}
 customElements.define("content-body", ContentBody, { extends: "div" });
 

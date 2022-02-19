@@ -23,6 +23,7 @@
 		background-color: $primary-modalbg-color;
 		color: $primary-font-color;
 
+		position: absolute;
 		overflow: scroll;
 		padding: 20px;
 		max-height: 70vh;
@@ -38,16 +39,36 @@
 			width: 40vw;
 		}
 	}
+	&_Header {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	&_Close {
+		@include linkIcon(Modal_Close, red, 0.3s);
+		@extend %noHighlightPointer;
+
+		background: transparent;
+
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
 	&_Title {
 		margin: 0;
-		margin-bottom: 20px;
+		font-size: 1.5rem;
 	}
 	&_Image {
 		@extend %border;
 		max-height: 300px;
 		max-width: 300px;
 	}
-	&_LinkIcon {
-		@include linkIcon(Modal_LinkIcon, $secondary-highlight-color, 0.3s);
+	&_Link {
+		@include linkIcon(Modal_Link, $secondary-highlight-color, 0.3s);
+		margin: 0;
+		padding: 0;
 	}
 }
