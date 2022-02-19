@@ -1,7 +1,7 @@
 @import "./../../styles/partials/variables";
 @import "./../../styles/partials/mixins";
 
-.Navbar {
+.Horizontal {
 	@include transition(0.5s);
 
 	color: $primary-font-color;
@@ -21,7 +21,7 @@
 	list-style: none;
 }
 
-.NavbarVertical {
+.Vertical {
 	@extend %centerFlex;
 	background-color: $primary-vertnav-color;
 
@@ -41,17 +41,13 @@
 	}
 	&_Icon {
 		@include transition(0.3s);
-		@include linkIcon(
-			NavbarVertical_Icon,
-			$secondary-highlight-color,
-			0.3s
-		);
+		@include linkIcon(Vertical_Icon, $secondary-highlight-color, 0.3s);
 
 		color: $primary-font-color;
 		font-size: $primary-icon-size;
 
 		&__Expanded {
-			@extend .NavbarVertical_Icon;
+			@extend .Vertical_Icon;
 			transform: scaleY(-1); // Wanna see me do a flip?
 			-webkit-transform: scaleY(-1);
 		}

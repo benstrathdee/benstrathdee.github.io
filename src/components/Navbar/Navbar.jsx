@@ -14,31 +14,31 @@ const Navbar = () => {
 	} = useContext(StateContext);
 
 	const getNavbarClass = () => {
-		if (windowIsHorizontal) return styles.Navbar;
+		if (windowIsHorizontal) return styles.Horizontal;
 		return navbarIsExpanded ? styles.Drawer__Expanded : styles.Drawer;
 	};
 
 	const menuIconClass = navbarIsExpanded
-		? styles.NavbarVertical_Icon__Expanded
-		: styles.NavbarVertical_Icon;
+		? styles.Vertical_Icon__Expanded
+		: styles.Vertical_Icon;
 
 	return (
 		<>
 			{!windowIsHorizontal && (
 				<>
-					<nav className={styles.NavbarVertical}>
+					<nav className={styles.Vertical}>
 						<button
 							onClick={() => {
 								setNavbarIsExpanded(!navbarIsExpanded);
 							}}
-							className={styles.NavbarVertical_Button}
+							className={styles.Vertical_Button}
 						>
 							<FontAwesomeIcon
 								icon={faChevronDown}
 								className={menuIconClass}
 							/>
 						</button>
-						<h2 className={styles.NavbarVertical_PageTitle}>
+						<h2 className={styles.Vertical_PageTitle}>
 							{activePage}
 						</h2>
 					</nav>
