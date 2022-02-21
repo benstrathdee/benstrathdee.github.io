@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.2e52b0d2.css",
-    "main.js": "/static/js/main.c503d950.js",
+    "main.css": "/static/css/main.9fa00081.css",
+    "main.js": "/static/js/main.d077edab.js",
     "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular.a8d6ac03c7b96b7acb62.ttf",
     "static/media/old_portfolio.jpg": "/static/media/old_portfolio.37b4df74ca5193a6e510.jpg",
     "static/media/background.jpg": "/static/media/background.791431fdf6427124e113.jpg",
     "static/media/html_calculator.png": "/static/media/html_calculator.5f1681aaf7e16c6ff9db.png",
     "static/media/morse_code.png": "/static/media/morse_code.096764025474bf084313.png",
     "index.html": "/index.html",
-    "main.2e52b0d2.css.map": "/static/css/main.2e52b0d2.css.map",
-    "main.c503d950.js.map": "/static/js/main.c503d950.js.map"
+    "main.9fa00081.css.map": "/static/css/main.9fa00081.css.map",
+    "main.d077edab.js.map": "/static/js/main.d077edab.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e52b0d2.css",
-    "static/js/main.c503d950.js"
+    "static/css/main.9fa00081.css",
+    "static/js/main.d077edab.js"
   ]
 }
