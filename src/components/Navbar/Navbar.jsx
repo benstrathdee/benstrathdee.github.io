@@ -52,7 +52,10 @@ const Navbar = () => {
 				</nav>
 			) : (
 				<nav-drawer>
-					<ul className={getNavbarClass()}>
+					<ul
+						className={getNavbarClass()}
+						onTouchStart={(e) => e.stopPropagation()}
+					>
 						<NavbarItem pageName="Home" />
 						<NavbarItem pageName="Skills" />
 						<NavbarItem pageName="About Me" />
