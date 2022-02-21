@@ -2,9 +2,9 @@
 @import "./../../styles/partials/mixins";
 
 .ContentBody {
-	background-color: $base-bg-color;
 	box-sizing: border-box;
 	height: 100vh;
+	position: fixed;
 	&__Vertical {
 		@extend .ContentBody;
 		@extend %centerFlexColumn;

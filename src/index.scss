@@ -1,3 +1,6 @@
+@import "./styles/partials/variables";
+@import "./styles/partials/mixins";
+
 @font-face {
 	font-family: "Roboto";
 	src: local("Roboto"),
@@ -10,8 +13,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	height: 100vh;
+	position: fixed;
 
-	background-color: #687381; /* Not intended to be visible, for status bars etc. */
+	background-color: $primary-vertnav-color; /* Not intended to be visible, for status bars etc. */
 
 	background: url(./images/background.jpg) no-repeat center fixed;
 	-webkit-background-size: cover;
@@ -22,6 +26,22 @@ body {
 
 	scroll-behavior: smooth;
 	font-size: 20px;
+}
+
+body::after {
+	// Adds the background overlay
+	content: "";
+
+	display: block;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+	background-color: $base-bg-color;
+	background-attachment: fixed;
 }
 
 code {
