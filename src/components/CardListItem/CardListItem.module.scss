@@ -34,5 +34,9 @@
 	&__Active {
 		@extend .Item;
 		background-color: $primary-highlight-color;
+		& .Item_Icons {
+			@include transition(0.3s);
+			color: $secondary-highlight-color;
+		}
 	}
 }
