@@ -53,9 +53,11 @@ const ContentBody = () => {
 		}
 	};
 
-	const handleClick = () => {
+	const handleDrawer = () => {
 		if (navbarIsExpanded) setNavbarIsExpanded(false);
 	};
+
+	window.addEventListener("touchstart", handleDrawer);
 
 	const doShowPage = async () => {
 		if (showPage === false) {
@@ -69,11 +71,7 @@ const ContentBody = () => {
 	}, []);
 
 	return (
-		<content-body
-			class={windowClass}
-			onClick={handleClick}
-			onmousedown={handleClick}
-		>
+		<content-body class={windowClass} onClick={handleDrawer}>
 			{getPage()}
 			<Modal />
 		</content-body>
