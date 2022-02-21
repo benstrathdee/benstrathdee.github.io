@@ -10,7 +10,7 @@
 		@extend %centerFlexColumn;
 		padding-top: $vertnav-height;
 		overflow: scroll;
-		scroll-snap-type: y mandatory;
+		scroll-snap-type: y proximity;
 		scroll-padding: 3.5em;
 	}
 }
