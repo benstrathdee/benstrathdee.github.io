@@ -43,7 +43,7 @@ const linkThree = {
 	title: "LinkedIn",
 	id: "item3",
 	content: [],
-	address: "https://www.linkedin.com/in/ben-strathdee-25b29b226/",
+	address: "www.linkedin.com/in/benstrathdee",
 	projects: [],
 	icons: [faLinkedin],
 };
