@@ -32,6 +32,13 @@ const CardContent = ({ content, linkBox }) => {
 					</p>
 				);
 			})}
+			{activeItem.points.length > 0 && (
+				<ul>
+					{activeItem.points.map((text, index) => {
+						return <li key={index}>{text}</li>;
+					})}
+				</ul>
+			)}
 			{activeItem.projects.length > 0 && (
 				<ProjectBox parent={activeItem} />
 			)}
@@ -60,6 +67,13 @@ const CardContent = ({ content, linkBox }) => {
 								</p>
 							);
 						})}
+						{activeItem.points.length > 0 && (
+							<ul>
+								{activeItem.points.map((text, index) => {
+									return <li key={index}>{text}</li>;
+								})}
+							</ul>
+						)}
 						{linkBox && (
 							<span className={styles.Vertical_LinksBox}>
 								{content.map((item, index) => {
