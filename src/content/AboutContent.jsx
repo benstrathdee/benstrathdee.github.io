@@ -26,6 +26,7 @@ export const linkOne = {
 		`Interested in contacting me about some work, or seeing what I'm
 	up to? Check me out on LinkedIn, or send me an email!`,
 	],
+	points: [],
 	projects: [],
 	icons: [faQuestion],
 };
@@ -34,6 +35,7 @@ const linkTwo = {
 	title: "GitHub",
 	id: "item2",
 	content: [],
+	points: [],
 	address: "https://github.com/benstrathdee",
 	projects: [],
 	icons: [faGithub],
@@ -43,6 +45,7 @@ const linkThree = {
 	title: "LinkedIn",
 	id: "item3",
 	content: [],
+	points: [],
 	address: "https://linkedin.com/in/benstrathdee",
 	projects: [],
 	icons: [faLinkedin],
@@ -52,6 +55,7 @@ const linkFour = {
 	title: "Email",
 	id: "item4",
 	content: [],
+	points: [],
 	address: "mailto:ben.strathdee@live.com.au",
 	projects: [],
 	icons: [faEnvelopeSquare],
